@@ -10,7 +10,7 @@
 .dbshell
 .gem
 .git
-.gitconfig
+# .gitconfig
 .guard_history
 # .gvimrc
 .heroku
