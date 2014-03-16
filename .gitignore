@@ -27,6 +27,7 @@
 # .vimrc
 .zcompdump
 # .zshrc
+.zsh_history
 .zshenv
 Desktop
 Documents
