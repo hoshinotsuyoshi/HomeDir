@@ -1,3 +1,6 @@
+[user]
+	email = guitarpopnot330@gmail.com
+	name = hoshinotsuyoshi
 [alias]
                     st = status -s
                     cdiff = diff --word-diff=color --word-diff-regex=.
@@ -7,3 +10,4 @@
                     ppm = push production master
                     psm = push staging master
                     pgm = push github master
+
