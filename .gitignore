@@ -1,0 +1,42 @@
+.
+..
+.CFUserTextEncoding
+.DS_Store
+.Trash
+.bash_history
+.berkshelf
+.bundler
+.cache
+.dbshell
+.gem
+.git
+.gitconfig
+.guard_history
+# .gvimrc
+.heroku
+.lesshst
+.mongorc.js
+.pry_history
+.rediscli_history
+.ssh
+.subversion
+.vagrant.d
+.vim
+.vimfuzzyfinder
+.viminfo
+# .vimrc
+.zcompdump
+# .zshrc
+.zshenv
+Desktop
+Documents
+Downloads
+Library
+Movies
+Music
+Pictures
+Public
+Vagrant
+VirtualBox VMs
+# brewfile
+repos

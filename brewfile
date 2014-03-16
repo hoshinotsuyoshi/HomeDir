@@ -1,0 +1,12 @@
+# for ruby1.8.7
+tap homebrew/dupes 
+install apple-gcc42
+
+# for development
+install chruby
+install ruby-build
+install redis
+install nkf
+
+# for use hg command to install vim-FuzzyFinder via Neobundle
+install hg
