@@ -6,6 +6,9 @@ alias be='bundle exec'
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+### git,svn editor is need to set nofork
+export EDITOR='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim --nofork'
+
 # chruby
 source /usr/local/opt/chruby/share/chruby/chruby.sh 
 
@@ -110,3 +113,14 @@ setopt inc_append_history
 # インクリメンタルからの検索
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
+
+# http://qiita.com/ayakix/items/44b990335169ca9e3d39
+# プロンプトのカラー表示を有効
+autoload -U colors
+# colors
+# Color
+setopt prompt_subst
+# ls時のカラー表記
+export LSCOLORS=gxfxcxdxbxegedabagacad
+# ファイルリスト補完時、ディレクトリをシアン
+zstyle ':completion:*' list-colors 'di=36;49'
