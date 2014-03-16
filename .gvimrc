@@ -19,4 +19,11 @@ set number
 set noswapfile
 set nobackup
 
+" https://github.com/cyborgninja/vimrc/blob/master/.vimrc
+" 全角スペースの表示
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+match ZenkakuSpace /　/
 
+" 末尾の半角スペースを視覚化
+highlight WhiteSpaceEOL guibg=#fff
+2match WhiteSpaceEOL /\S\@<=\s\+$/
