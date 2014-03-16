@@ -1,5 +1,3 @@
-set ts=20 sw=2 sts=2
-
 " ウインドウの高さ
 set lines=40
 " 行番号
@@ -45,9 +43,6 @@ Bundle 'altercation/vim-colors-solarized'
 " ファイル形式検出、プラグイン、インデントを ON
 filetype plugin indent on 
 
-
-" カラー設定:
-colorscheme desert 
 
 "-FuzzyFinder-------------
 " http://d.hatena.ne.jp/mickey24/20090310/1236633777
@@ -130,8 +125,7 @@ nmap <Space> [unite]
 
 nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> [unite]F :<C-u>UniteWithBufferDir -buffer-name=files -default-action=tabopen file<CR>
-nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<Space>
-nnoremap <silent> [unite]M :<C-u>Unite<Space>file_mru<Space>-default-action=tabopen<CR>
+nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<Space>-default-action=tabopen<CR>
 
 "スペースキーとaキーでカレントディレクトリを表示
 nnoremap <silent> [unite]a :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
@@ -159,4 +153,4 @@ au InsertEnter * setlocal cursorline
 au InsertLeave * highlight StatusLine ctermfg=145 guifg=#c2bfa5 guibg=#000000
 au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 
-" http://qiita.com/joker1007/items/9dc7f2a92cfb245ad502 
+" http://qiita.com/joker1007/items/9dc7f2a92cfb245ad502

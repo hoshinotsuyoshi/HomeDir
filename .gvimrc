@@ -1,7 +1,3 @@
-set ts=20 sw=2 sts=2
-
-" カラー設定:
-" colorscheme desert 
 " http://qiita.com/Humangas/items/848f0318dfc3c6f5b8e2
 syntax enable
 " set background=dark
@@ -25,5 +21,20 @@ highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
 
 " 末尾の半角スペースを視覚化
-highlight WhiteSpaceEOL guibg=#fff
+highlight WhiteSpaceEOL guibg=#fff 
 2match WhiteSpaceEOL /\S\@<=\s\+$/
+
+" https://github.com/cyborgninja/vimrc/blob/master/.vimrc
+"----------------------------------------------------
+" インデント
+"----------------------------------------------------
+" オートインデントを無効にする
+"set noautoindent
+" タブが対応する空白の数
+set tabstop=2
+" タブやバックスペースの使用等の編集操作をするときに、タブが対応する空白の数
+set softtabstop=2
+" インデントの各段階に使われる空白の数
+set shiftwidth=2
+" タブを挿入するとき、代わりに空白を使わない
+set noexpandtab
