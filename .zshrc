@@ -15,6 +15,10 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
 PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
 
+#右のほうにsvnのリビジョン出したい
+#http://openbooth.org/archives/29.html
+source $HOME/.zsh.d/dirctx # dirctx を読む
+RPROMPT='$DIRCTX'
 
 # http://futurismo.biz/archives/1363
 ## Screenでのコマンド共有用
