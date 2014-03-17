@@ -1,5 +1,3 @@
-.
-..
 .CFUserTextEncoding
 .DS_Store
 .Trash
@@ -40,4 +38,10 @@ Public
 Vagrant
 VirtualBox VMs
 # brewfile
+
 repos
+.cups/
+Applications/
+memos/
+sandbox/
+work/
