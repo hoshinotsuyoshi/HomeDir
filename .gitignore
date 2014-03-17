@@ -1,3 +1,4 @@
+[berlin]
 .CFUserTextEncoding
 .DS_Store
 .Trash
@@ -5,17 +6,12 @@
 .berkshelf
 .bundler
 .cache
-.dbshell
+.cups
 .gem
 .git
-# .gitconfig
-.guard_history
+# .gitignore
 # .gvimrc
-.heroku
 .lesshst
-.mongorc.js
-.pry_history
-.rediscli_history
 .ssh
 .subversion
 .vagrant.d
@@ -23,10 +19,9 @@
 .vimfuzzyfinder
 .viminfo
 # .vimrc
-.zcompdump
-# .zshrc
 .zsh_history
-.zshenv
+# .zshrc
+Applications
 Desktop
 Documents
 Downloads
@@ -35,10 +30,26 @@ Movies
 Music
 Pictures
 Public
-Vagrant
 VirtualBox VMs
-# brewfile
+brewfile
+homedir
+memos
+mymemo.txt
+private.xml
+sandbox
+work
 
+[hoshino]
+# .gitconfig
+.guard_history
+.heroku
+.mongorc.js
+.pry_history
+.rediscli_history
+.zcompdump
+.zshenv
+Vagrant
+# brewfile
 repos
 .cups/
 Applications/
