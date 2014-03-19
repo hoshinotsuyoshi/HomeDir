@@ -1,5 +1,5 @@
 " ウインドウの高さ
-set lines=40
+set lines=60
 " 行番号
 set number
  
@@ -123,22 +123,22 @@ let g:unite_enable_start_insert=1
 "prefix keyの設定
 nmap <Space> [unite]
 
-nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> [unite]F :<C-u>UniteWithBufferDir -buffer-name=files -default-action=tabopen file<CR>
+" nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" nnoremap <silent> [unite]F :<C-u>UniteWithBufferDir -buffer-name=files -default-action=tabopen file<CR>
 nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<Space>-default-action=tabopen<CR>
 
 "スペースキーとaキーでカレントディレクトリを表示
 nnoremap <silent> [unite]a :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 "スペースキーとeキーでバッファと最近開いたファイル一覧を表示
-nnoremap <silent> [unite]e :<C-u>Unite<Space>buffer file_mru<CR>
+" nnoremap <silent> [unite]e :<C-u>Unite<Space>buffer file_mru<CR>
 "スペースキーとdキーで最近開いたディレクトリを表示
-nnoremap <silent> [unite]d :<C-u>Unite<Space>directory_mru<CR>
+" nnoremap <silent> [unite]d :<C-u>Unite<Space>directory_mru<CR>
 "スペースキーとbキーでバッファを表示
-nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
+" nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
 "スペースキーとrキーでレジストリを表示
 nnoremap <silent> [unite]r :<C-u>Unite<Space>register<CR>
 "スペースキーとtキーでタブを表示
-nnoremap <silent> [unite]t :<C-u>Unite<Space>tab<CR>
+" nnoremap <silent> [unite]t :<C-u>Unite<Space>tab<CR>
 "unite.vimを開いている間のキーマッピング
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
