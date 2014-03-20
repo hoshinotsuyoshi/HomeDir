@@ -6,7 +6,7 @@ colorscheme solarized
 let g:solarized_termcolors=256
 
 " ウインドウの高さ
-set lines=40
+set lines=60
 " ウインドウの幅
 set columns=180
 " 行番号
@@ -23,6 +23,11 @@ match ZenkakuSpace /　/
 " 末尾の半角スペースを視覚化
 highlight WhiteSpaceEOL guibg=#fff 
 2match WhiteSpaceEOL /\S\@<=\s\+$/
+
+"Tab、行末の半角スペースを明示的に表示する。
+"https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
+set list
+set listchars=tab:^\ ,trail:~
 
 " https://github.com/cyborgninja/vimrc/blob/master/.vimrc
 "----------------------------------------------------
