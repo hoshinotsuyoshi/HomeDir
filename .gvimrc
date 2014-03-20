@@ -1,3 +1,4 @@
+set ts=20 sw=2 sts=2
 " http://qiita.com/Humangas/items/848f0318dfc3c6f5b8e2
 syntax enable
 " set background=dark
@@ -6,7 +7,7 @@ colorscheme solarized
 let g:solarized_termcolors=256
 
 " ウインドウの高さ
-set lines=40
+set lines=60
 " ウインドウの幅
 set columns=180
 " 行番号
@@ -24,6 +25,11 @@ match ZenkakuSpace /　/
 highlight WhiteSpaceEOL guibg=#fff 
 2match WhiteSpaceEOL /\S\@<=\s\+$/
 
+"Tab、行末の半角スペースを明示的に表示する。
+"https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
+set list
+set listchars=tab:^\ ,trail:~
+
 " https://github.com/cyborgninja/vimrc/blob/master/.vimrc
 "----------------------------------------------------
 " インデント
@@ -31,10 +37,10 @@ highlight WhiteSpaceEOL guibg=#fff
 " オートインデントを無効にする
 "set noautoindent
 " タブが対応する空白の数
-set tabstop=2
+" set tabstop=2
 " タブやバックスペースの使用等の編集操作をするときに、タブが対応する空白の数
-set softtabstop=2
+" set softtabstop=2
 " インデントの各段階に使われる空白の数
-set shiftwidth=2
+" set shiftwidth=2
 " タブを挿入するとき、代わりに空白を使わない
-set noexpandtab
+" set noexpandtab
