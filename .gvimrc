@@ -1,4 +1,4 @@
-set ts=20 sw=2 sts=2
+set ts=2 sts=2 sw=2 expandtab  "for ruby
 " http://qiita.com/Humangas/items/848f0318dfc3c6f5b8e2
 syntax enable
 " set background=dark
@@ -37,13 +37,13 @@ set listchars=tab:^\ ,trail:~
 " オートインデントを無効にする
 "set noautoindent
 " タブが対応する空白の数
-" set tabstop=2
+" set tabstop=20
 " タブやバックスペースの使用等の編集操作をするときに、タブが対応する空白の数
-" set softtabstop=2
+"set softtabstop=2
 " インデントの各段階に使われる空白の数
-" set shiftwidth=2
+"set shiftwidth=2
 " タブを挿入するとき、代わりに空白を使わない
-" set noexpandtab
+"set noexpandtab
 
 "http://qiita.com/m-yamashita/items/28ce6f90b1d3fdc2eb24
 "----------------------------------------------------
