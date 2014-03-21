@@ -44,3 +44,12 @@ set listchars=tab:^\ ,trail:~
 " set shiftwidth=2
 " タブを挿入するとき、代わりに空白を使わない
 " set noexpandtab
+
+"http://qiita.com/m-yamashita/items/28ce6f90b1d3fdc2eb24
+"----------------------------------------------------
+" 検索
+"----------------------------------------------------
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
