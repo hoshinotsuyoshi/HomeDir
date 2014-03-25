@@ -1,5 +1,9 @@
 set ts=20 sw=2 sts=2
 " http://qiita.com/Humangas/items/848f0318dfc3c6f5b8e2
+
+" fileformat=unix にしておけば CrLf は ^M で表示されるらしい
+:set fileformat=unix
+
 syntax enable
 " set background=dark
 set background=light
