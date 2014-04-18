@@ -1,5 +1,5 @@
 # for ruby1.8.7
-tap homebrew/dupes 
+tap homebrew/dupes
 install apple-gcc42
 
 # for development
@@ -11,3 +11,6 @@ install rbenv
 
 # for use hg command to install vim-FuzzyFinder via Neobundle
 install hg
+
+# for use capybara-webkit, needs qmake
+install qt
