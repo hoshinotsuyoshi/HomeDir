@@ -1,13 +1,13 @@
 [user]
-	email = guitarpopnot330@gmail.com
-	name = hoshinotsuyoshi
+  email = guitarpopnot330@gmail.com
+  name = hoshinotsuyoshi
 [alias]
-                    st = status -s
-                    cdiff = diff --word-diff=color --word-diff-regex=.
-                    cv = commit -v
-                    uns = rm --cached
-                    l = log --stat --pretty=format:'commit %C(green)%H%Creset%nAuthor: %C(blue)%an %x3c%ae%x3e%Creset%nDate:   %aD%n%n%C(cyan)    %s%Creset%n%n%w(0,4,4)%b'
-                    ppm = push production master
-                    psm = push staging master
-                    pgm = push github master
-
+  st = status -s
+  cdiff = diff --word-diff=color --word-diff-regex=.
+  co = checkout
+  cv = commit -v
+  uns = rm --cached
+  l = log --stat --pretty=format:'commit %C(green)%H%Creset%nAuthor: %C(blue)%an %x3c%ae%x3e%Creset%nDate:   %aD%n%n%C(cyan)    %s%Creset%n%n%w(0,4,4)%b'
+  ppm = push production master
+  psm = push staging master
+  pgm = push github master
