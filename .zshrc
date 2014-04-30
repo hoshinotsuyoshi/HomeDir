@@ -9,9 +9,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 ### git,svn editor is need to set nofork
 export EDITOR='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim --nofork'
 
-# chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh 
-
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
 PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
 
@@ -139,3 +136,21 @@ setopt prompt_subst
 export LSCOLORS=gxfxcxdxbxegedabagacad
 # ファイルリスト補完時、ディレクトリをシアン
 zstyle ':completion:*' list-colors 'di=36;49'
+
+# chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+# chruby
+# use .ruby-version
+# http://www.codeography.com/2013/09/23/how_i_setup_chruby.html
+if [[ -e /usr/local/share/chruby ]]; then
+  # Load chruby
+  source '/usr/local/share/chruby/chruby.sh'
+
+  # Automatically switch rubies
+  source '/usr/local/share/chruby/auto.sh'
+
+  # Set a default ruby if a .ruby-version file exists in the home dir
+  if [[ -f ~/.ruby-version ]]; then
+    chruby $(cat ~/.ruby-version)
+  fi
+fi
