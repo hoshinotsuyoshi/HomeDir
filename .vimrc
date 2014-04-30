@@ -100,7 +100,7 @@ filetype plugin indent on
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim' "uniteでtabopenするときにvimfilerが必要
-
+NeoBundle 'h1mesuke/vim-alignta' ":Alignで記号とかを揃える
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
