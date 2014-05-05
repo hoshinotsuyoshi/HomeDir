@@ -154,3 +154,7 @@ au InsertLeave * highlight StatusLine ctermfg=145 guifg=#c2bfa5 guibg=#000000
 au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 
 " http://qiita.com/joker1007/items/9dc7f2a92cfb245ad502
+
+
+" un~の無視
+:set noundofile
