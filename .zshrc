@@ -1,6 +1,6 @@
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
-alias ll='ls -l -a'
+alias ll='ls -alF'
 alias be='bundle exec'
 
 ### Added by the Heroku Toolbelt

@@ -3,6 +3,9 @@ tap homebrew/dupes
 install apple-gcc42
 
 # for development
+install tmux
+
+# for development
 install chruby
 install ruby-build
 install redis
