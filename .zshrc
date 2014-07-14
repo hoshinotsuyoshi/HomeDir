@@ -2,6 +2,7 @@ alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
 alias ll='ls -alF'
 alias be='bundle exec'
+alias tac='tail -r'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -96,6 +97,9 @@ setopt hist_ignore_dups
 # 開始と終了を記録
 setopt EXTENDED_HISTORY
 
+setopt hist_ignore_dups     # ignore duplication command history list
+setopt share_history        # share command history data
+
 # 全履歴を一覧表示する
 function history-all { history -E 1 }
 # ここで､特定のキーワードのみを覚えていた場合､それらをつなぎあわせて検索することで､複雑なワンライナーの再利用も簡単になります｡
@@ -154,3 +158,31 @@ if [[ -e /usr/local/share/chruby ]]; then
     chruby $(cat ~/.ruby-version)
   fi
 fi
+
+# percol
+#function percol_select_history() {
+#  local tac_cmd
+#  which gtac &> /dev/null && tac_cmd=gtac || tac_cmd=tac
+#  BUFFER=$($tac_cmd ~/.zsh_history | sed 's/^: [0-9]*:[0-9]*;//' \
+#    | percol --match-method regex --query "$LBUFFER")
+#  CURSOR=$#BUFFER         # move cursor
+#  zle -R -c               # refresh
+#}
+#zle -N percol_select_history
+#bindkey '^R' percol_select_history
+
+function percol-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | \
+        eval $tac | \
+        percol --match-method migemo --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N percol-select-history
+bindkey '^E' percol-select-history

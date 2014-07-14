@@ -1,5 +1,5 @@
 " ウインドウの高さ
-set lines=40
+" set lines=40
 " 行番号
 set number
  

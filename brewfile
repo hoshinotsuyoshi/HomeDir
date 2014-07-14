@@ -2,6 +2,11 @@
 tap homebrew/dupes
 install apple-gcc42
 
+install icu4c
+link icu4c
+
+install node
+
 # for development
 install tmux
 
