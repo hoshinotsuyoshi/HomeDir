@@ -1,3 +1,4 @@
+set ts=2 sts=2 sw=2 expandtab  "for ruby
 " ウインドウの高さ
 " set lines=40
 " 行番号

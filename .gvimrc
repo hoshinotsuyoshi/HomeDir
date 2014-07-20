@@ -1,4 +1,3 @@
-set ts=2 sts=2 sw=2 expandtab  "for ruby
 " http://qiita.com/Humangas/items/848f0318dfc3c6f5b8e2
 
 " fileformat=unix にしておけば CrLf は ^M で表示されるらしい
