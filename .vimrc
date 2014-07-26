@@ -7,6 +7,20 @@ set number
 set noswapfile
 set nobackup
 
+" https://github.com/cyborgninja/vimrc/blob/master/.vimrc
+" 全角スペースの表示
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+match ZenkakuSpace /　/
+
+" 末尾の半角スペースを視覚化
+highlight WhiteSpaceEOL guibg=#fff 
+2match WhiteSpaceEOL /\S\@<=\s\+$/
+
+"Tab、行末の半角スペースを明示的に表示する。
+"https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
+set list
+set listchars=tab:^\ ,trail:~
+
 " netrw関連
 " see http://blog.tojiru.net/article/234400966.html
 "
@@ -16,8 +30,6 @@ let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 " netrwは'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
 let g:netrw_alto = 1
-
-
 
 " vundle関連
 " http://slumbers99.blogspot.jp/2012/02/vim-vundle.html
