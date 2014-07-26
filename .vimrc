@@ -7,6 +7,17 @@ set number
 set noswapfile
 set nobackup
 
+" yankしたときにclipboardにもコピーする
+set clipboard=unnamed,autoselect
+
+" fileformat=unix にしておけば CrLf は ^M で表示されるらしい
+:set fileformat=unix
+
+syntax enable
+" set background=dark
+set background=light
+" let g:solarized_termcolors=256
+
 " https://github.com/cyborgninja/vimrc/blob/master/.vimrc
 " 全角スペースの表示
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
