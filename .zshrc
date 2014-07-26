@@ -1,5 +1,5 @@
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
+#alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
 alias ll='ls -alF'
 alias be='bundle exec'
 alias tac='tail -r'
@@ -8,7 +8,7 @@ alias tac='tail -r'
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### git,svn editor is need to set nofork
-export EDITOR='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim --nofork'
+#export EDITOR='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim --nofork'
 
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
 PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
