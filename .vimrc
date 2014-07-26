@@ -7,11 +7,16 @@ set number
 set noswapfile
 set nobackup
 
-" yankしたときにclipboardにもコピーする
+" pasteしたときのindent消す
+set paste
+" インサート抜けるときに解除
+autocmd InsertLeave * set nopaste
+
+" yankしたときにclipboardにもコピーする(なんかうまくいかない)
 set clipboard=unnamed,autoselect
 
 " fileformat=unix にしておけば CrLf は ^M で表示されるらしい
-:set fileformat=unix
+set fileformat=unix
 
 syntax enable
 " set background=dark
