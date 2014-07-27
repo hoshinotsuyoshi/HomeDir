@@ -160,37 +160,21 @@ if [[ -e /usr/local/share/chruby ]]; then
   fi
 fi
 
-# percol
-#function percol_select_history() {
-#  local tac_cmd
-#  which gtac &> /dev/null && tac_cmd=gtac || tac_cmd=tac
-#  BUFFER=$($tac_cmd ~/.zsh_history | sed 's/^: [0-9]*:[0-9]*;//' \
-#    | percol --match-method regex --query "$LBUFFER")
-#  CURSOR=$#BUFFER         # move cursor
-#  zle -R -c               # refresh
-#}
-#zle -N percol_select_history
-#bindkey '^R' percol_select_history
 
-function percol-select-history() {
+function peco-select-history() {
     local tac
     if which tac > /dev/null; then
         tac="tac"
     else
         tac="tail -r"
     fi
-    BUFFER=$(history -n 1 | \
+    BUFFER=$(\history -n 1 | \
         eval $tac | \
-        percol --match-method migemo --query "$LBUFFER")
+        peco --query "$LBUFFER")
     CURSOR=$#BUFFER
     zle clear-screen
 }
-zle -N percol-select-history
-bindkey '^E' percol-select-history
-
-# http://qiita.com/ikm/items/0e498981c6b19ac8d19b
-. /usr/local/etc/profile.d/z.sh
-function _Z_precmd {
-  z --add "$(pwd -P)" 61 }
-precmd_functions=($precmd_functions _Z_precmd)
-
+zle -N peco-select-history
+bindkey '^e' peco-select-history
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
