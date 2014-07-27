@@ -1,7 +1,9 @@
 # for ruby1.8.7
 tap homebrew/dupes
+
 install apple-gcc42
 
+install z
 install icu4c
 link icu4c
 

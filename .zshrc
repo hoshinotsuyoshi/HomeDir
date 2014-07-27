@@ -187,3 +187,10 @@ function percol-select-history() {
 }
 zle -N percol-select-history
 bindkey '^E' percol-select-history
+
+# http://qiita.com/ikm/items/0e498981c6b19ac8d19b
+. /usr/local/etc/profile.d/z.sh
+function _Z_precmd {
+  z --add "$(pwd -P)" 61 }
+precmd_functions=($precmd_functions _Z_precmd)
+
