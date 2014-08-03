@@ -3,17 +3,12 @@ set ts=2 sts=2 sw=2 expandtab  "for ruby
 " set lines=40
 " 行番号
 set number
- 
+
 set noswapfile
 set nobackup
 
-" pasteしたときのindent消す
-set paste
-" インサート抜けるときに解除
-autocmd InsertLeave * set nopaste
-
 " yankしたときにclipboardにもコピーする(なんかうまくいかない)
-set clipboard=unnamed,autoselect
+set clipboard=unnamed
 
 " fileformat=unix にしておけば CrLf は ^M で表示されるらしい
 set fileformat=unix
@@ -24,6 +19,7 @@ set background=light
 " let g:solarized_termcolors=256
 
 " https://github.com/cyborgninja/vimrc/blob/master/.vimrc
+"
 " 全角スペースの表示
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/

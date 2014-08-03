@@ -1,5 +1,4 @@
-#alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
+alias mvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/vim "$@"'
 alias ll='ls -alF'
 alias be='bundle exec'
@@ -178,3 +177,12 @@ zle -N peco-select-history
 bindkey '^e' peco-select-history
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
+
+
+# http://qiita.com/ikm/items/0e498981c6b19ac8d19b
+# 
+. /usr/local/etc/profile.d/z.sh
+function _Z_precmd {
+  z --add "$(pwd -P)" 61 }
+  precmd_functions=($precmd_functions _Z_precmd)
+
