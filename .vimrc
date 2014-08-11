@@ -7,6 +7,8 @@ set number
 set noswapfile
 set nobackup
 
+set autoindent
+
 " yankしたときにclipboardにもコピーする(なんかうまくいかない)
 set clipboard=unnamed
 

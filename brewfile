@@ -6,6 +6,7 @@ install apple-gcc42
 #install vim
 install reattach-to-user-namespace
 install z
+install mysql
 install imagemagick
 install icu4c
 link icu4c
