@@ -11,11 +11,6 @@
         <autogen>--KeyToKey-- KeyCode::JIS_KANA, KeyCode::COMMAND_R</autogen>
     </item>
     <item>
-        <name>CONTROL_L to CAPS_LOCK</name>
-        <identifier>private.control_left2caps_lock</identifier>
-        <autogen>--KeyToKey-- KeyCode::CONTROL_L, KeyCode::CAPSLOCK</autogen>
-    </item>
-    <item>
         <name>COMMAND_R to CONTROL_R</name>
         <identifier>private.command_right2control_right</identifier>
         <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>

@@ -1,7 +1,14 @@
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
+#alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
 alias ll='ls -l -a'
 alias be='bundle exec'
+
+### go
+if [ -x "`which go`" ]; then
+      export GOROOT=`go env GOROOT`
+      export GOPATH=$HOME/go
+      export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -85,10 +92,10 @@ setopt hist_ignore_space
 export HISTFILE=${HOME}/.zsh_history
 
 # メモリに保存される履歴の件数
-export HISTSIZE=1000
+export HISTSIZE=300000
 
 # 履歴ファイルに保存される履歴の件数
-export SAVEHIST=100000
+export SAVEHIST=3000000
 
 # 重複を記録しない
 setopt hist_ignore_dups
@@ -154,3 +161,28 @@ if [[ -e /usr/local/share/chruby ]]; then
     chruby $(cat ~/.ruby-version)
   fi
 fi
+
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^e' peco-select-history
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
+# http://qiita.com/ikm/items/0e498981c6b19ac8d19b
+# 
+. /usr/local/etc/profile.d/z.sh
+function _Z_precmd {
+  z --add "$(pwd -P)" 61 }
+  precmd_functions=($precmd_functions _Z_precmd)

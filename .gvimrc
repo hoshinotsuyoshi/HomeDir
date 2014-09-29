@@ -58,4 +58,4 @@ nmap N Nzz
 nmap * *zz
 nmap # #zz
 
-set transparency=30
+set transparency=0
