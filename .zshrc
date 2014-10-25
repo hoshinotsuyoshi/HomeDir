@@ -11,7 +11,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #export EDITOR='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim --nofork'
 
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
-PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
+#PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
+PROMPT='[%F{blue}%d%f]'
 
 #右のほうにsvnのリビジョン出したい
 #http://openbooth.org/archives/29.html
@@ -27,7 +28,8 @@ precmd () {
     LANG=en_US.UTF-8 vcs_info
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-RPROMPT="%{${fg[yellow]}%}[%n@%m%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
+#RPROMPT="%{${fg[yellow]}%}[%n@%m%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
+RPROMPT="%{${fg[yellow]}%}[%n%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
 
 # http://futurismo.biz/archives/1363
 ## Screenでのコマンド共有用
