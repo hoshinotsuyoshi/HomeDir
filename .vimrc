@@ -1,19 +1,39 @@
 set ts=2 sts=2 sw=2 expandtab  "for ruby
 " ウインドウの高さ
-" set lines=80
+" set lines=40
 " 行番号
 set number
-
-syntax enable
-
-" set background=dark
-set background=light
 
 set noswapfile
 set nobackup
 
+set autoindent
+
 " yankしたときにclipboardにもコピーする(なんかうまくいかない)
 set clipboard=unnamed
+
+" fileformat=unix にしておけば CrLf は ^M で表示されるらしい
+set fileformat=unix
+
+syntax enable
+" set background=dark
+set background=light
+" let g:solarized_termcolors=256
+
+" https://github.com/cyborgninja/vimrc/blob/master/.vimrc
+"
+" 全角スペースの表示
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+match ZenkakuSpace /　/
+
+" 末尾の半角スペースを視覚化
+highlight WhiteSpaceEOL guibg=#fff 
+2match WhiteSpaceEOL /\S\@<=\s\+$/
+
+"Tab、行末の半角スペースを明示的に表示する。
+"https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
+set list
+set listchars=tab:^\ ,trail:~
 
 " netrw関連
 " see http://blog.tojiru.net/article/234400966.html
@@ -24,11 +44,6 @@ let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 " netrwは'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
 let g:netrw_alto = 1
-
-"Tab、行末の半角スペースを明示的に表示する。
-"https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-color#color-zenkaku
-set list
-set listchars=tab:^\ ,trail:~
 
 " vundle関連
 " http://slumbers99.blogspot.jp/2012/02/vim-vundle.html
