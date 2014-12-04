@@ -188,3 +188,4 @@ function _Z_precmd {
   z --add "$(pwd -P)" 61 }
   precmd_functions=($precmd_functions _Z_precmd)
 
+export PATH=/usr/local/bin:$PATH
