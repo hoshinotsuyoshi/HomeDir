@@ -11,3 +11,13 @@
   ppm = push production master
   psm = push staging master
   pgm = push github master
+[svn]
+        rmdir = true
+[core]
+	excludesfile = /Users/hoshino/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
