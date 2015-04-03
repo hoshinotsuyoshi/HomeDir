@@ -1,6 +1,16 @@
 # for ruby1.8.7
 tap homebrew/dupes
 
+<<<<<<< HEAD
+=======
+install go
+# for development
+install tmux
+install vim 
+
+install reattach-to-user-namespace
+install z
+>>>>>>> master
 install apple-gcc42
 
 #install vim
@@ -13,8 +23,8 @@ link icu4c
 
 install node
 
-# for development
-install tmux
+#install icu4c
+#link icu4c
 
 # for development
 install chruby

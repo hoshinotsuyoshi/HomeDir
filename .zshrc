@@ -4,6 +4,13 @@ alias ll='ls -alF'
 alias be='bundle exec'
 alias tac='tail -r'
 
+### go
+if [ -x "`which go`" ]; then
+      export GOROOT=`go env GOROOT`
+      export GOPATH=$HOME/go
+      export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+fi
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -89,7 +96,7 @@ setopt hist_ignore_space
 export HISTFILE=${HOME}/.zsh_history
 
 # メモリに保存される履歴の件数
-export HISTSIZE=30000
+export HISTSIZE=300000
 
 # 履歴ファイルに保存される履歴の件数
 export SAVEHIST=3000000
@@ -162,7 +169,6 @@ if [[ -e /usr/local/share/chruby ]]; then
   fi
 fi
 
-
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -180,7 +186,6 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
-
 
 # http://qiita.com/ikm/items/0e498981c6b19ac8d19b
 # 

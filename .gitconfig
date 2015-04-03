@@ -12,4 +12,4 @@
   psm = push staging master
   pgm = push github master
 [core]
-	editor = vim -c \"set fenc=utf-8\"
+  editor = vim -c \"set fenc=utf-8\"
