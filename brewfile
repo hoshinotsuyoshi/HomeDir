@@ -1,16 +1,11 @@
 # for ruby1.8.7
 tap homebrew/dupes
 
-<<<<<<< HEAD
-=======
 install go
 # for development
 install tmux
 install vim 
 
-install reattach-to-user-namespace
-install z
->>>>>>> master
 install apple-gcc42
 
 #install vim
