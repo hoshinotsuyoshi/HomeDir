@@ -12,6 +12,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
 #PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
+#PROMPT='[%F{blue}%d%f]'
 PROMPT='[%F{blue}%d%f]'
 
 #右のほうにsvnのリビジョン出したい
@@ -176,7 +177,7 @@ function peco-select-history() {
     zle clear-screen
 }
 zle -N peco-select-history
-bindkey '^e' peco-select-history
+bindkey '^r' peco-select-history
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
