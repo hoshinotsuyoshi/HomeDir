@@ -62,6 +62,7 @@ Bundle 'gmarik/vundle'
 " " solarizedを使いたい
 " " http://d.hatena.ne.jp/ebc_2in2crc/20121031/1351687541
 Bundle 'altercation/vim-colors-solarized'
+let g:solarized_termcolors=256
 
 " vim-scripts プラグイン
 
