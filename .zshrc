@@ -217,4 +217,4 @@ bindkey '^m' do_enter
 export PATH=/usr/local/bin:$PATH
 
 
-
+whence direnv >/dev/null && eval "$(direnv hook zsh)"
