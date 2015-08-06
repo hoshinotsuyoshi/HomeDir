@@ -1,0 +1,7 @@
+#!/bin/sh
+GREP_RESULT=`git diff --cached | grep AKIA`
+if [[ -n "${GREP_RESULT}" ]]; then
+  echo "\033[31m\]AWS_ACCESS_KEY might be in this index. Please check with git diff --cached"
+  echo ${GREP_RESULT}
+  exit 1
+fi

@@ -1,0 +1,16 @@
+# vim
+*.swp
+
+# Emacs
+*~
+
+# OSX
+.DS_Store
+
+# WebStorm
+/.idea
+
+vendor/bundle
+
+.env
+.envrc
