@@ -53,22 +53,6 @@ set nocompatible
 " ファイル形式の検出を無効にする
 filetype off
 
-" Vundle を初期化して
-" Vundle 自身も Vundle で管理
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-
-" github にあるプラグイン
-" " solarizedを使いたい
-" " http://d.hatena.ne.jp/ebc_2in2crc/20121031/1351687541
-Bundle 'altercation/vim-colors-solarized'
-let g:solarized_termcolors=256
-
-" vim-scripts プラグイン
-
-" github にないプラグイン
-
 " ファイル形式検出、プラグイン、インデントを ON
 filetype plugin indent on 
 
@@ -133,3 +117,4 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 
 " un~の無視
 :set noundofile
+
