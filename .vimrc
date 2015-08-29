@@ -1,3 +1,7 @@
+"<NeoBundle>
+"NeoBundleのいうとおりに設定
+"see 'github.com/Shougo/neobundle.vim'
+
 "NeoBundle Scripts-----------------------------
 if has('vim_starting')
   if &compatible
@@ -35,8 +39,34 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
+"</NeoBundle>
 
+"<Unite>
+"NeoBundle Scripts-----------------------------
+call neobundle#begin(expand('/Users/berlin/.vim/bundle'))
+NeoBundle 'Shougo/unite.vim'
+call neobundle#end()
+"End NeoBundle Scripts-------------------------
 
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+
+" 入力モードで開始する
+" let g:unite_enable_start_insert=1
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+"</Unite>
 
 set ts=2 sts=2 sw=2 expandtab  "for ruby
 " ウインドウの高さ
