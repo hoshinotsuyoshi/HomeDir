@@ -3,6 +3,7 @@ set ts=2 sts=2 sw=2 expandtab  "for ruby
 " set lines=40
 " 行番号
 set number
+set paste
 
 set noswapfile
 set nobackup
