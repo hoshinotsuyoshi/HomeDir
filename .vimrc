@@ -22,6 +22,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Add or remove your Bundles here:
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
@@ -188,3 +189,22 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 " un~の無視
 :set noundofile
 
+
+" http://qiita.com/uchiko/items/4c186292f007535116cc
+filetype off
+filetype plugin indent off
+" set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
+
+
+
+" http://blog.restartr.com/2014/04/20/vimrc-noexpandtab-in-golang/
+if expand("%:t") =~ ".*\.go"
+  set noexpandtab
+  set tabstop=4
+  set shiftwidth=4
+endif
