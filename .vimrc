@@ -1,16 +1,10 @@
-"<NeoBundle>
-"NeoBundleのいうとおりに設定
-"see 'github.com/Shougo/neobundle.vim'
-
 "NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=/Users/berlin/.vim/bundle/neobundle.vim/
+if &compatible
+  set nocompatible               " Be iMproved
 endif
+
+" Required:
+set runtimepath^=/Users/berlin/.vim/bundle/neobundle.vim/
 
 " Required:
 call neobundle#begin(expand('/Users/berlin/.vim/bundle'))
@@ -40,7 +34,7 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
-"</NeoBundle>
+
 
 "<Unite>
 "NeoBundle Scripts-----------------------------
@@ -66,8 +60,9 @@ nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-
 "</Unite>
+
+
 
 set ts=2 sts=2 sw=2 expandtab  "for ruby
 " ウインドウの高さ
