@@ -121,12 +121,6 @@ let g:netrw_alto = 1
 " http://slumbers99.blogspot.jp/2012/02/vim-vundle.html
 " vi との互換性OFF
 set nocompatible
-" ファイル形式の検出を無効にする
-filetype off
-
-" ファイル形式検出、プラグイン、インデントを ON
-filetype plugin indent on 
-
 
 " http://qiita.com/wadako111/items/755e753677dd72d8036d
 " Anywhere SID.
@@ -190,6 +184,7 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 :set noundofile
 
 
+" golang
 " http://qiita.com/uchiko/items/4c186292f007535116cc
 filetype off
 filetype plugin indent off
@@ -200,11 +195,19 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 
-
-
+" golang
 " http://blog.restartr.com/2014/04/20/vimrc-noexpandtab-in-golang/
 if expand("%:t") =~ ".*\.go"
   set noexpandtab
   set tabstop=4
   set shiftwidth=4
+endif
+
+" ruby
+" http://easyramble.com/set-vim-indent-with-filetype.html
+if expand("%:t") =~ ".*\.rb"
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
 endif
