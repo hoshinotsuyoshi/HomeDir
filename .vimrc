@@ -117,11 +117,6 @@ let g:netrw_altv = 1
 " netrwは'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
 let g:netrw_alto = 1
 
-" vundle関連
-" http://slumbers99.blogspot.jp/2012/02/vim-vundle.html
-" vi との互換性OFF
-set nocompatible
-
 " http://qiita.com/wadako111/items/755e753677dd72d8036d
 " Anywhere SID.
 function! s:SID_PREFIX()
