@@ -187,3 +187,7 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 
 " un~の無視
 :set noundofile
+
+" http://qiita.com/crispy/items/9a49d7dc792740f062ab
+set spell
+set spelllang=en,cjk
