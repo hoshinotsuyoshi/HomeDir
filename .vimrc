@@ -60,19 +60,13 @@ nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-
 "</Unite>
 
-set ts=2 sts=2 sw=2 expandtab  "for ruby
-" ウインドウの高さ
-" set lines=40
-" 行番号
+set ts=2 sts=2 sw=2 expandtab
 set number
 set paste
-
 set noswapfile
 set nobackup
-
 set autoindent
 
 " yankしたときにclipboardにもコピーする(なんかうまくいかない)
@@ -110,17 +104,6 @@ let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 " netrwは'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
 let g:netrw_alto = 1
-
-" vundle関連
-" http://slumbers99.blogspot.jp/2012/02/vim-vundle.html
-" vi との互換性OFF
-set nocompatible
-" ファイル形式の検出を無効にする
-filetype off
-
-" ファイル形式検出、プラグイン、インデントを ON
-filetype plugin indent on 
-
 
 " http://qiita.com/wadako111/items/755e753677dd72d8036d
 " Anywhere SID.
