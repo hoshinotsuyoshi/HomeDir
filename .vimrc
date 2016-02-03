@@ -1,16 +1,10 @@
-"<NeoBundle>
-"NeoBundleのいうとおりに設定
-"see 'github.com/Shougo/neobundle.vim'
-
 "NeoBundle Scripts-----------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=/Users/hoshino/.vim/bundle/neobundle.vim/
+if &compatible
+  set nocompatible               " Be iMproved
 endif
+
+" Required:
+set runtimepath^=/Users/hoshino/.vim/bundle/neobundle.vim/
 
 " Required:
 call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
@@ -39,12 +33,13 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
-"</NeoBundle>
+
 
 "<Unite>
 "NeoBundle Scripts-----------------------------
 call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 call neobundle#end()
 "End NeoBundle Scripts-------------------------
 
