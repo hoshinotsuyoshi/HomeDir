@@ -6,8 +6,6 @@
 syntax enable
 " set background=dark
 set background=light
-colorscheme solarized
-let g:solarized_termcolors=256
 
 " ウインドウの高さ
 set lines=60
