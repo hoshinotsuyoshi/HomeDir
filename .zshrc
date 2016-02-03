@@ -1,5 +1,6 @@
 alias mvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/vim "$@"'
+alias :e='vim'
 alias ll='ls -alF'
 alias be='bundle exec'
 alias tac='tail -r'
@@ -20,7 +21,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
 #PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
 #PROMPT='[%F{blue}%d%f]'
-PROMPT='[%F{blue}%d%f]'
+PROMPT='[%F{blue}%d%f]$ '
 
 # http://futurismo.biz/archives/1363
 ## Screenでのコマンド共有用
@@ -196,10 +197,10 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
-export PATH=/usr/local/bin:$PATH
-
-export DOCKER_CERT_PATH=/Users/hoshino/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-
 whence direnv >/dev/null && eval "$(direnv hook zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/hoshino/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/hoshino/google-cloud-sdk/completion.zsh.inc'
