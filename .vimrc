@@ -166,6 +166,35 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 " un~の無視
 :set noundofile
 
+
+" golang
+" http://qiita.com/uchiko/items/4c186292f007535116cc
+filetype off
+filetype plugin indent off
+" set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
+
+" golang
+" http://blog.restartr.com/2014/04/20/vimrc-noexpandtab-in-golang/
+if expand("%:t") =~ ".*\.go"
+  set noexpandtab
+  set tabstop=4
+  set shiftwidth=4
+endif
+
+" ruby
+" http://easyramble.com/set-vim-indent-with-filetype.html
+if expand("%:t") =~ ".*\.rb"
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+endif
+
 " http://qiita.com/crispy/items/9a49d7dc792740f062ab
 set spell
 set spelllang=en,cjk
