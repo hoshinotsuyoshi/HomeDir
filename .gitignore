@@ -45,18 +45,25 @@ work
 # .gitconfig
 .guard_history
 .heroku
-.mongorc.js
 .pry_history
 .rediscli_history
 .zcompdump
 .zshenv
 Vagrant
-# brewfile
 repos
-.cups/
 Applications/
-memos/
-sandbox/
 work/
 .rbenv
 vendor/bundle
+
+
+.boot2docker/
+.config/
+.docker/
+.esets/
+.gsutil/
+.node-gyp/
+.npm/
+.z
+go/
+google-cloud-sdk/
