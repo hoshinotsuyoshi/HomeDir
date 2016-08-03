@@ -21,6 +21,7 @@
 .viminfo
 # .vimrc
 .zsh_history
+.*
 # .zshrc
 Applications
 Desktop

@@ -15,5 +15,13 @@
         <identifier>private.command_right2control_right</identifier>
         <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>
     </item>
+    <item>
+        <name>CONTROL_L to RETURN</name>
+        <identifier>private.control_m2return</identifier>
+        <autogen>
+        __KeyToKey__
+        KeyCode::M, ModifierFlag::CONTROL_L
+        KeyCode::RETURN
+        </autogen>
+    </item>
 </root>
-

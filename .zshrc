@@ -21,7 +21,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
 #PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
 #PROMPT='[%F{blue}%d%f]'
-PROMPT='[%F{blue}%d%f]'
+PROMPT='[%F{blue}%d%f]$ '
 
 #右のほうにsvnのリビジョン出したい
 #http://openbooth.org/archives/29.html
@@ -38,7 +38,7 @@ precmd () {
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 #RPROMPT="%{${fg[yellow]}%}[%n@%m%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
-RPROMPT="%{${fg[yellow]}%}[%n%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
+#RPROMPT="%{${fg[yellow]}%}[%n%1(v|%F{green}%1v%f|)%{${fg[yellow]}%}]%{${reset_color}%}%b "
 
 # http://futurismo.biz/archives/1363
 ## Screenでのコマンド共有用
@@ -186,7 +186,7 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/opt/bin
 
 # http://qiita.com/ikm/items/0e498981c6b19ac8d19b
 # 
@@ -217,4 +217,13 @@ bindkey '^m' do_enter
 export PATH=/usr/local/bin:$PATH
 
 
+# direnv はchrubyより先のほうがPATH周りの優先順位で良いことがあるかも
 whence direnv >/dev/null && eval "$(direnv hook zsh)"
+
+
+export NVM_DIR="/Users/berlin/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+
+export PATH="/usr/local/sbin:$PATH"

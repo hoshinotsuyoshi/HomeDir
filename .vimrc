@@ -201,3 +201,15 @@ if expand("%:t") =~ ".*\.rb"
   set softtabstop=2
   set shiftwidth=2
 endif
+if expand("%:t") =~ ".*\.rake"
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+endif
+if expand("%:t") =~ ".*Rakefile"
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+endif
