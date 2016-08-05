@@ -29,7 +29,7 @@ task :install do
 	z
 	zsh
 	).each do |text|
-		sh "echo brew install #{text}"
+		sh "brew install #{text}"
 	end
 
 	%w(
