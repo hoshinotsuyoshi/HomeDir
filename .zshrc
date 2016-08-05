@@ -11,8 +11,6 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
-#PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
-#PROMPT='[%F{blue}%d%f]'
 PROMPT='[%F{blue}%d%f]$ '
 
 # http://futurismo.biz/archives/1363
@@ -22,27 +20,10 @@ setopt inc_append_history
 ## ヒストリを共有
 setopt share_history
 
-
-# http://qiita.com/uasi/items/c4288dd835a65eb9d709
-# Emacs ライクな操作を有効にする（文字入力中に Ctrl-F,B でカーソル移動など）
-# Vi ライクな操作が好みであれば `bindkey -v` とする
-# bindkey -v
-
 # 自動補完を有効にする
 # コマンドの引数やパス名を途中まで入力して <Tab> を押すといい感じに補完してくれる
 # 例： `cd path/to/<Tab>`, `ls -<Tab>`
 autoload -U compinit; compinit
-
-# 入力したコマンドが存在せず、かつディレクトリ名と一致するなら、ディレクトリに cd する
-# 例： /usr/bin と入力すると /usr/bin ディレクトリに移動
-setopt auto_cd
-
-# ↑に加えて、 .. とだけ入力したら1つ上のディレクトリに cd できるようにする
-alias ..='cd ..'
-
-# もっと増やしてもよい
-alias ...='cd ../..'
-alias ....='cd ../../..'
 
 # cd した先のディレクトリをディレクトリスタックに追加する
 # ディレクトリスタックとは今までに行ったディレクトリの履歴のこと
@@ -53,7 +34,7 @@ setopt pushd_ignore_dups
 
 # 拡張 glob を有効にする
 # glob とはパス名にマッチするワイルドカードパターンのこと
-# （たとえば `mv hoge.* ~/dir` における "*"）
+a （たとえば `mv hoge.* ~/dir` における "*"）
 # 拡張 glob を有効にすると # ~ ^ もパターンとして扱われる
 # どういう意味を持つかは `man zshexpn` の FILENAME GENERATION を参照
 # setopt extended_glob
