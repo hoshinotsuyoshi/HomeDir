@@ -71,6 +71,7 @@ task :install do
 		google-chrome
 		google-japanese-ime
 		karabiner
+		macvim
 		skitch
 		vagrant
 	).each do |text|
