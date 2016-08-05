@@ -13,6 +13,7 @@ task :install do
 	gnu-sed
 	gnu-tar
 	go
+	heroku-toolbelt
 	hub
 	jq
 	lha
