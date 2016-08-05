@@ -109,3 +109,9 @@ task :login_shell do
 	puts "「ユーザとグループ」->"
 	puts "「hoshino」-> 右クリック -> 詳細オプション"
 end
+
+desc 'neobundle'
+task :neobundle do
+  puts "You should install neobundle for vim setup."
+  puts "Visit github.com/Shougo/neobundle.vim"
+end
