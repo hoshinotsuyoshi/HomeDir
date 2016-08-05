@@ -100,3 +100,10 @@ task :symlink do
     ln_s "#{Dir.pwd}/#{path}", link unless File.exist?(link)
   end
 end
+
+desc 'login shell'
+task :login_shell do
+  puts "==== how to change login shell ===="
+  puts "「ユーザとグループ」->"
+  puts "「hoshino」-> 右クリック -> 詳細オプション"
+end
