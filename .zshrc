@@ -1,9 +1,5 @@
 alias mvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/vim "$@"'
-alias :e='vim'
 alias ll='ls -alF'
-alias be='bundle exec'
-alias tac='tail -r'
 
 ### go
 if [ -x "`which go`" ]; then
@@ -14,9 +10,6 @@ fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-### git,svn editor is need to set nofork
-#export EDITOR='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/mvim --nofork'
 
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
 #PROMPT='[%F{magenta}%B%n%b%f@][%F{green}%d%f]'
