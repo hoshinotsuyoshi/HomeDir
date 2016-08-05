@@ -1,3 +1,4 @@
+require 'fileutils'
 desc 'go!'
 task :install do
 
@@ -61,20 +62,41 @@ task :install do
   ruby-build
   the_silver_searcher
   xz
-  z
   ).each do |text|
     puts "not install : brew install #{text}"
   end
+
+  %w(
+    clipmenu
+    google-chrome
+    google-japanese-ime
+    karabiner
+    skitch
+    vagrant
+  ).each do |text|
+    sh "brew cask install #{text}"
+  end
+  # licecap
 end
 
-%w(
-  clipmenu
-  google-chrome
-  google-japanese-ime
-  karabiner
-  skitch
-  vagrant
-).each do |text|
-  sh "brew cask install #{text}"
+desc 'setup ssh client'
+task :ssh do
+  puts "==== setup ~/.ssh ===="
+  sh 'mkdir -p .ssh'
+  sh 'chmod 700 .ssh'
+  unless File.exist?('.ssh/id_rsa')
+    puts 'Not Found -- .ssh/id_rsa'
+  end
 end
-  # licecap
+
+desc 'symlink to dotfiles'
+task :symlink do
+  include FileUtils
+  puts "==== symlink to dotfiles ===="
+  home = ENV.fetch('HOME'){ abort('You should set $HOME') }
+  paths = `git ls-files`.split("\n").map{|p| p.split("/").first}.uniq - ["Rakefile"]
+  paths.each do |path|
+    link = "#{home}/#{path}"
+    ln_s "#{Dir.pwd}/#{path}", link unless File.exist?(link)
+  end
+end
