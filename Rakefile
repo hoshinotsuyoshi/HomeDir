@@ -9,6 +9,7 @@ task :install do
   #sh 'brew doctor'
 
   %w(
+  direnv
   git
   gnu-sed
   gnu-tar
