@@ -19,6 +19,7 @@ task :install do
   lha
   nodenv
   nkf
+  peco
   pwgen
   qt
   reattach-to-user-namespace
