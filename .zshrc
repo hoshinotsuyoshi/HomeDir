@@ -88,6 +88,9 @@ setopt hist_expand
 # 履歴をインクリメンタルに追加
 setopt inc_append_history
 
+# emacs風。明示しないと^Pが使えない時ある
+bindkey -e
+
 # インクリメンタルからの検索
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
