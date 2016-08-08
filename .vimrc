@@ -87,7 +87,7 @@ highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
 
 " 末尾の半角スペースを視覚化
-highlight WhiteSpaceEOL guibg=#fff 
+highlight WhiteSpaceEOL guibg=#ffffff 
 2match WhiteSpaceEOL /\S\@<=\s\+$/
 
 "Tab、行末の半角スペースを明示的に表示する。
