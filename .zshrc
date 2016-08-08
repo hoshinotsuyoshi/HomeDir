@@ -32,17 +32,9 @@ setopt auto_pushd
 # pushd したとき、ディレクトリがすでにスタックに含まれていればスタックに追加しない
 setopt pushd_ignore_dups
 
-# 拡張 glob を有効にする
-# glob とはパス名にマッチするワイルドカードパターンのこと
-a （たとえば `mv hoge.* ~/dir` における "*"）
-# 拡張 glob を有効にすると # ~ ^ もパターンとして扱われる
-# どういう意味を持つかは `man zshexpn` の FILENAME GENERATION を参照
-# setopt extended_glob
-
 # 入力したコマンドがすでにコマンド履歴に含まれる場合、履歴から古いほうのコマンドを削除する
 # コマンド履歴とは今まで入力したコマンドの一覧のことで、上下キーでたどれる
 setopt hist_ignore_all_dups
-
 
 # http://qiita.com/PSP_T/items/c1a1567b2b76051f50c4 
 # コマンドがスペースで始まる場合、コマンド履歴に追加しない
