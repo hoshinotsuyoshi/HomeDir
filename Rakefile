@@ -141,3 +141,11 @@ task :neobundle do
   puts "You should install neobundle for vim setup."
   puts "Visit github.com/Shougo/neobundle.vim"
 end
+
+desc 'setup karabiner'
+task :karabiner do
+  puts "==== replace private.xml ===="
+  include FileUtils
+  cp 'karabiner/private.xml',
+    "/Users/hoshino/Library/Application Support/Karabiner"
+end
