@@ -83,6 +83,16 @@ task :install do
   # licecap
 end
 
+desc 'tools install by pip'
+task :install_by_pip do
+  %w(
+    awscli
+    awslogs
+  ).each do |text|
+    sh "pip install #{text}"
+  end
+end
+
 desc 'rbenv'
 task :rbenv do
   puts "==== go-get to get rbenv ===="
