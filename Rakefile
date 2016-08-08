@@ -177,3 +177,9 @@ task :fonts do
     inconsolata
   )
 end
+
+desc 'install docker'
+task :docker do
+  puts 'use docker-for-mac'
+  puts 'visit https://docs.docker.com/docker-for-mac/'
+end
