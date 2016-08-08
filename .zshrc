@@ -177,3 +177,8 @@ source '/Users/hoshino/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
 source '/Users/hoshino/google-cloud-sdk/completion.zsh.inc'
+
+# rbenv
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${GOPATH}/src/github.com/rbenv/rbenv/bin:${PATH} && \
+    eval "$(rbenv init -)"
