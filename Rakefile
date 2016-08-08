@@ -82,6 +82,16 @@ task :install do
   # licecap
 end
 
+desc 'go get'
+task :go_get do
+  puts "==== go-get to get tools ===="
+  %w(
+    github.com/rbenv/rbenv
+  ).each do |text|
+    system "go get #{text}"
+  end
+end
+
 desc 'setup ssh client'
 task :ssh do
   puts "==== setup ~/.ssh ===="
