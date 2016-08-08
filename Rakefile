@@ -160,3 +160,12 @@ task :karabiner do
   cp 'karabiner/private.xml',
     "/Users/hoshino/Library/Application Support/Karabiner"
 end
+
+desc 'setup chrome extention'
+task :chrome_extention do
+  puts "==== show favorite extensions ===="
+  puts %w(
+    https://chrome.google.com/webstore/detail/vichrome/gghkfhpblkcmlkmpcpgaajbbiikbhpdi
+    https://chrome.google.com/webstore/detail/githubexpandinizr/cbehdjjcilgnejbpnjhobkiiggkedfib
+  )
+end
