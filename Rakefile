@@ -161,11 +161,19 @@ task :karabiner do
     "/Users/hoshino/Library/Application Support/Karabiner"
 end
 
-desc 'setup chrome extention'
+desc 'show chrome extention'
 task :chrome_extention do
   puts "==== show favorite extensions ===="
   puts %w(
     https://chrome.google.com/webstore/detail/vichrome/gghkfhpblkcmlkmpcpgaajbbiikbhpdi
     https://chrome.google.com/webstore/detail/githubexpandinizr/cbehdjjcilgnejbpnjhobkiiggkedfib
+  )
+end
+
+desc 'show fonts'
+task :fonts do
+  puts "==== show favorite fonts ===="
+  puts %w(
+    inconsolata
   )
 end
