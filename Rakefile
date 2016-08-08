@@ -82,14 +82,29 @@ task :install do
   # licecap
 end
 
-desc 'go get'
-task :go_get do
-  puts "==== go-get to get tools ===="
+desc 'rbenv'
+task :rbenv do
+  puts "==== go-get to get rbenv ===="
   %w(
     github.com/rbenv/rbenv
+    github.com/rbenv/ruby-build
   ).each do |text|
     system "go get #{text}"
   end
+
+  puts "==== symlink .rbenv/plugins/ruby-build to rbenv/ruby-build ===="
+  sh 'mkdir -p ~/.rbenv/plugins'
+  include FileUtils
+  home   = ENV.fetch('HOME'){ abort('You should set $HOME') }
+  gopath = ENV.fetch('GOPATH'){ abort('You should set $GOPATH') }
+  unless File.exist?("#{home}/.rbenv/plugins/ruby-build")
+    ln_s "#{gopath}/src/github.com/rbenv/ruby-build", "#{home}/.rbenv/plugins"
+  end
+end
+
+desc 'setup ruby'
+task :ruby do
+  sh 'rbenv install 2.3.1'
 end
 
 desc 'setup ssh client'
