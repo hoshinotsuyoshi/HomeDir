@@ -10,6 +10,6 @@
   editor = vim -c \"set fenc=utf-8\"
   excludesfile = /Users/hoshino/.gitignore_global
 [push]
-  default = matching
+	default = simple
 [init]
   templatedir = ~/.git_template
