@@ -36,7 +36,6 @@ brewfile
 homedir
 memos
 mymemo.txt
-private.xml
 sandbox
 work
 .gitconfig.local

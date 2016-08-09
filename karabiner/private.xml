@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+    <item>
+        <name>EISUU to ESC</name>
+        <identifier>private.eisuu2escape</identifier>
+        <autogen>--KeyToKey-- KeyCode::JIS_EISUU, KeyCode::ESCAPE</autogen>
+    </item>
+    <item>
+        <name>KANA to COMMAND_R</name>
+        <identifier>private.kana2c_right</identifier>
+        <autogen>--KeyToKey-- KeyCode::JIS_KANA, KeyCode::COMMAND_R</autogen>
+    </item>
+    <item>
+        <name>COMMAND_R to CONTROL_R</name>
+        <identifier>private.command_right2control_right</identifier>
+        <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>
+    </item>
+    <item>
+        <name>C-m to Return</name>
+        <identifier>private.ctrl_m2return</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::M, ModifierFlag::CONTROL_L,
+          KeyCode::RETURN
+        </autogen>
+    </item>
+</root>

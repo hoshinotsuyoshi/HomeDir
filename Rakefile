@@ -159,6 +159,9 @@ task :karabiner do
   include FileUtils
   cp 'karabiner/private.xml',
     "/Users/hoshino/Library/Application Support/Karabiner"
+  puts "!!!"
+  puts "replacing private.xml is successful. Please open karabiner && do reload xml."
+  puts "!!!"
 end
 
 desc 'show chrome extention'
