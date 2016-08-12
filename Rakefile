@@ -10,6 +10,7 @@ task :install do
 
   %w(
   direnv
+  doxygen
   git
   gnu-sed
   gnu-tar
