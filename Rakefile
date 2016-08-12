@@ -1,4 +1,11 @@
 require 'fileutils'
+require 'yaml'
+
+def setting
+  yaml = File.join(File.dirname(__FILE__), 'setting.yml')
+  YAML.load_file(yaml)
+end
+
 desc 'go!'
 task :install do
 
@@ -8,43 +15,11 @@ task :install do
 
   #sh 'brew doctor'
 
-  %w(
-  direnv
-  doxygen
-  git
-  gnu-sed
-  gnu-tar
-  go
-  heroku-toolbelt
-  hub
-  jq
-  lha
-  nodenv
-  nkf
-  peco
-  pwgen
-  qt
-  reattach-to-user-namespace
-  tmux
-  tree
-  vim
-  watch
-  wget
-  z
-  zsh
-  ).each do |text|
+  setting[:brew].each do |text|
     sh "brew install #{text}"
   end
 
-  %w(
-    clipmenu
-    google-chrome
-    google-japanese-ime
-    karabiner
-    macvim
-    skitch
-    vagrant
-  ).each do |text|
+  setting[:cask].each do |text|
     sh "brew cask install #{text}"
   end
   # licecap

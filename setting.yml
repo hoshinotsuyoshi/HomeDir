@@ -1,0 +1,32 @@
+:brew:
+  - direnv
+  - doxygen
+  - git
+  - gnu-sed
+  - gnu-tar
+  - go
+  - heroku-toolbelt
+  - hub
+  - jq
+  - lha
+  - nodenv
+  - nkf
+  - peco
+  - pwgen
+  - qt
+  - reattach-to-user-namespace
+  - tmux
+  - tree
+  - vim
+  - watch
+  - wget
+  - z
+  - zsh
+:cask:
+  - clipmenu
+  - google-chrome
+  - google-japanese-ime
+  - karabiner
+  - macvim
+  - skitch
+  - vagrant
