@@ -6,7 +6,7 @@ def setting
   YAML.load_file(yaml)
 end
 
-desc 'go!'
+desc 'install commands by homebrew and homebrew-cask'
 task :install do
 
   #sh 'echo xcode-select --intall'
