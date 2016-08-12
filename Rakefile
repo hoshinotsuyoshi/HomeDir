@@ -36,40 +36,6 @@ task :install do
   end
 
   %w(
-  apple-gcc42
-  autoconf
-  bindfs
-  boot2docker
-  chruby
-  coreutils
-  dnvm
-  docker
-  graphviz
-  icu4c
-  ipcalc
-  libevent
-  libpng
-  maven31
-  mercurial
-  mono
-  mysql
-  n
-  nginx
-  openssl
-  osxfuse
-  pcre
-  pkg-config
-  postgresql
-  readline
-  redis
-  ruby-build
-  the_silver_searcher
-  xz
-  ).each do |text|
-    puts "not install : brew install #{text}"
-  end
-
-  %w(
     clipmenu
     google-chrome
     google-japanese-ime
