@@ -9,11 +9,12 @@
   - hub
   - jq
   - lha
+  - mysql
   - nodenv
   - nkf
   - peco
   - pwgen
-  - qt
+  # - qt
   - reattach-to-user-namespace
   - tmux
   - tree
