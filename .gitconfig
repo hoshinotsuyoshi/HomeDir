@@ -8,7 +8,7 @@
   cv = commit -v
 [core]
   editor = vim -c \"set fenc=utf-8\"
-  excludesfile = /Users/hoshino/.gitignore_global
+  excludesfile = /Users/cesario/.gitignore_global
 [push]
 	default = simple
 [init]
