@@ -106,7 +106,7 @@ task :karabiner do
   puts "==== replace private.xml ===="
   include FileUtils
   cp 'karabiner/private.xml',
-    "/Users/hoshino/Library/Application Support/Karabiner"
+    "/Users/cesario/Library/Application Support/Karabiner"
   puts "!!!"
   puts "replacing private.xml is successful. Please open karabiner && do reload xml."
   puts "!!!"
