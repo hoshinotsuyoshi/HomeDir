@@ -6,14 +6,20 @@ def setting
   YAML.load_file(yaml)
 end
 
+desc 'xcode-select --install'
+task :xcode_select_install do
+  sh 'xcode-select --install'
+end
+
+desc 'install homebrew'
+task :brew do
+  sh '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+
+  sh 'brew doctor'
+end
+
 desc 'install commands by homebrew and homebrew-cask'
 task :install do
-
-  #sh 'echo xcode-select --intall'
-
-  #sh 'echo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
-
-  #sh 'brew doctor'
 
   setting[:brew].each do |text|
     sh "brew install #{text}"
