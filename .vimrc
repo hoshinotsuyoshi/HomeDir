@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/hoshino/.vim/bundle/neobundle.vim/
+set runtimepath^=/Users/cesario/.vim/bundle/neobundle.vim/
 
 " Required:
-call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
+call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -37,7 +37,7 @@ NeoBundleCheck
 
 "<Unite>
 "NeoBundle Scripts-----------------------------
-call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
+call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 call neobundle#end()
