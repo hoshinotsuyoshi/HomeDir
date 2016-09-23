@@ -1,4 +1,5 @@
 :brew:
+  - ctags
   - direnv
   - doxygen # surpress warning by `brew doctor`
   - git
