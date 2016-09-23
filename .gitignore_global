@@ -10,7 +10,12 @@
 # WebStorm
 /.idea
 
+# ctags
+tags
+
+# ruby
 vendor/bundle
 
+# dotenv, direnv
 .env
 .envrc
