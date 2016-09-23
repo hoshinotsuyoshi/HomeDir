@@ -216,3 +216,8 @@ endif
 " http://qiita.com/crispy/items/9a49d7dc792740f062ab
 set spell
 set spelllang=en,cjk
+
+" 別タブを開いてタグジャンプ
+nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
+" 横分割 & タグジャンプ (上:変化なし 下:tagjump先)
+nnoremap <F4> :stj <C-R>=expand('<cword>')<CR><CR> <C-w><S-j><CR>

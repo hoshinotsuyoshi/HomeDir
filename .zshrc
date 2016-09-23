@@ -1,4 +1,5 @@
 alias ll='ls -alF'
+alias ctags="`brew --prefix`/bin/ctags"
 
 ### go
 if [ -x "`which go`" ]; then
