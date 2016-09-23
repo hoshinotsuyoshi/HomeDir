@@ -1,7 +1,4 @@
 --append=yes
 --recurse=yes
---php-kinds=cfd
 --html-kinds=af
---java-kinds=cfimp
 --ruby-kinds=cfm
---perl-kinds
