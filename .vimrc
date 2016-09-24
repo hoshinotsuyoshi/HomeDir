@@ -62,6 +62,15 @@ nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 "</Unite>
 
+"NeoBundle Scripts-----------------------------
+call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
+" tags
+NeoBundle 'szw/vim-tags'
+call neobundle#end()
+"End NeoBundle Scripts-------------------------
+
+
+
 set ts=2 sts=2 sw=2 expandtab
 set number
 set paste
@@ -221,10 +230,3 @@ set spelllang=en,cjk
 nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
 " 横分割 & タグジャンプ (上:変化なし 下:tagjump先)
 nnoremap <F4> :stj <C-R>=expand('<cword>')<CR><CR> <C-w><S-j><CR>
-
-"NeoBundle Scripts-----------------------------
-call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
-" tags
-NeoBundle 'szw/vim-tags'
-call neobundle#end()
-"End NeoBundle Scripts-------------------------
