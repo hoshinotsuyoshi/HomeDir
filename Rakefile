@@ -159,3 +159,20 @@ task :solarized_macvim do
     rm_rf 'solarized.zip'
   end
 end
+
+desc 'install ecs-cli'
+task :install_ecs_cli do
+  Dir.chdir '/tmp' do
+    ECS_CLI_LOCATION = 'https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-darwin-amd64-latest'
+    ECS_CLI_MD5 = 'https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-darwin-amd64-latest.md5'
+    sh "curl -sSL #{ECS_CLI_LOCATION} > ecs-cli"
+    expected_md5 = %x(curl -sSL #{ECS_CLI_MD5})
+    actual_md5   = %x(md5 -q ecs-cli)
+    if expected_md5 == actual_md5
+      chmod 0755, 'ecs-cli'
+      mv 'ecs-cli', '/usr/local/bin'
+    else
+      abort 'md5 mismatch'
+    end
+  end
+end
