@@ -265,6 +265,7 @@ if expand("%:t") =~ ".*Gemfile"
   set shiftwidth=2
 endif
 
+" スペルチェック
 " http://qiita.com/crispy/items/9a49d7dc792740f062ab
 set spell
 set spelllang=en,cjk
