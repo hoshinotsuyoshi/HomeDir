@@ -66,3 +66,4 @@ vendor/bundle
 .z
 go/
 google-cloud-sdk/
+*.local.yml
