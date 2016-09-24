@@ -221,3 +221,10 @@ set spelllang=en,cjk
 nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
 " 横分割 & タグジャンプ (上:変化なし 下:tagjump先)
 nnoremap <F4> :stj <C-R>=expand('<cword>')<CR><CR> <C-w><S-j><CR>
+
+"NeoBundle Scripts-----------------------------
+call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
+" tags
+NeoBundle 'szw/vim-tags'
+call neobundle#end()
+"End NeoBundle Scripts-------------------------
