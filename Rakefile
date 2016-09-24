@@ -1,6 +1,8 @@
 require 'fileutils'
 require 'yaml'
 
+include FileUtils
+
 def setting
   yaml = File.join(File.dirname(__FILE__), 'setting.yml')
   YAML.load_file(yaml)
@@ -53,7 +55,6 @@ task :rbenv do
 
   puts "==== symlink .rbenv/plugins/ruby-build to rbenv/ruby-build ===="
   sh 'mkdir -p ~/.rbenv/plugins'
-  include FileUtils
   home   = ENV.fetch('HOME'){ abort('You should set $HOME') }
   gopath = ENV.fetch('GOPATH'){ abort('You should set $GOPATH') }
   unless File.exist?("#{home}/.rbenv/plugins/ruby-build")
@@ -78,7 +79,6 @@ end
 
 desc 'symlink to dotfiles'
 task :symlink do
-  include FileUtils
   puts "==== symlink to dotfiles ===="
   home = ENV.fetch('HOME'){ abort('You should set $HOME') }
   paths = `git ls-files`.split("\n").map{|p| p.split("/").first}.uniq - ["Rakefile"]
@@ -104,7 +104,6 @@ end
 desc 'setup karabiner'
 task :karabiner do
   puts "==== replace private.xml ===="
-  include FileUtils
   cp 'karabiner/private.xml',
     "/Users/cesario/Library/Application Support/Karabiner"
   puts "!!!"
@@ -133,4 +132,21 @@ desc 'install docker'
 task :docker do
   puts 'use docker-for-mac'
   puts 'visit https://docs.docker.com/docker-for-mac/'
+end
+
+desc 'install solarized to macvim'
+task :solarized_macvim do
+  SOLARIZED_DOWNLOAD_LOCATION = 'http://ethanschoonover.com/solarized/files/solarized.zip'
+  MACVIM_COLORS_DIR = '/Applications/MacVim.app/Contents/Resources/vim/runtime/colors/'
+  SOLARIZED_VIM_LOCATION = './solarized/vim-colors-solarized/colors/solarized.vim'
+
+  Dir.chdir '/tmp' do
+    rm_rf 'solarized'
+    rm_rf 'solarized.zip'
+    sh "curl -LO #{SOLARIZED_DOWNLOAD_LOCATION}"
+    sh 'unzip -q solarized.zip'
+    mv SOLARIZED_VIM_LOCATION, MACVIM_COLORS_DIR
+    rm_rf 'solarized'
+    rm_rf 'solarized.zip'
+  end
 end
