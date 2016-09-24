@@ -47,11 +47,13 @@ let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
 
 " 入力モードで開始する
-" let g:unite_enable_start_insert=1
+let g:unite_enable_start_insert=1
 " バッファ一覧
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,uF :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" 再帰的にファイル一覧
+nnoremap <silent> ,uf :<C-u>Unite file_rec <CR>
 " レジスタ一覧
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
