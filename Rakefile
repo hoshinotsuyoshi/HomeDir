@@ -22,7 +22,6 @@ end
 
 desc 'install commands by homebrew and homebrew-cask'
 task :install do
-
   setting[:brew].each do |text|
     sh "brew install #{text}"
   end
@@ -38,6 +37,7 @@ task :install_by_pip do
   %w(
     awscli
     awslogs
+    powerline-status==2.4
   ).each do |text|
     sh "pip install #{text}"
   end
@@ -129,12 +129,12 @@ task :chrome_extention do
   )
 end
 
-desc 'show fonts'
-task :fonts do
-  puts "==== show favorite fonts ===="
-  puts %w(
-    inconsolata
-  )
+desc 'Install fonts for powerline'
+task :fonts_powerline do
+  sh 'go get github.com/powerline/fonts || true'
+  Dir.chdir "#{ENV['GOPATH']}/src/github.com/powerline/fonts" do
+    sh './install.sh'
+  end
 end
 
 desc 'install docker'
