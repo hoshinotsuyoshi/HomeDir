@@ -43,6 +43,15 @@ task :install_by_pip do
   end
 end
 
+desc 'tools install by gem'
+task :install_by_gem do
+  %w(
+    tmuxinator
+  ).each do |text|
+    sh "gem install #{text}"
+  end
+end
+
 desc 'rbenv'
 task :rbenv do
   puts "==== go-get to get rbenv ===="
