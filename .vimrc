@@ -68,6 +68,8 @@ nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mr
 call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
 " tags
 NeoBundle 'szw/vim-tags'
+" powerline
+NeoBundle 'powerline/powerline' , {'rtp': 'powerline/bindings/vim/'}
 call neobundle#end()
 "End NeoBundle Scripts-------------------------
 
