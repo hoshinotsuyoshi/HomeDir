@@ -270,7 +270,6 @@ endif
 set spell
 set spelllang=en,cjk
 
-" 別タブを開いてタグジャンプ
-nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
-" 横分割 & タグジャンプ (上:変化なし 下:tagjump先)
-nnoremap <F4> :stj <C-R>=expand('<cword>')<CR><CR> <C-w><S-j><CR>
+" ctags
+" tagsジャンプの時に複数ある時は一覧表示
+nnoremap <C-]> g<C-]>
