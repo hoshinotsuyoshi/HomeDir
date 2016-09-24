@@ -18,6 +18,7 @@
   # - qt
   - reattach-to-user-namespace
   - the_silver_searcher
+  - tig
   - tmux
   - tree
   - vim
