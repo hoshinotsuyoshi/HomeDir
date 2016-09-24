@@ -273,3 +273,6 @@ set spelllang=en,cjk
 " ctags
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
+
+" 別タブを開いてタグジャンプ
+nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
