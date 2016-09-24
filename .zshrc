@@ -157,3 +157,4 @@ whence direnv >/dev/null && eval "$(direnv hook zsh)"
 [[ -d ~/.rbenv  ]] && \
   export PATH=${GOPATH}/src/github.com/rbenv/rbenv/bin:${PATH} && \
     eval "$(rbenv init -)"
+source ~/.tmuxinator/tmuxinator.zsh
