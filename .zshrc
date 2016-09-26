@@ -158,3 +158,13 @@ whence direnv >/dev/null && eval "$(direnv hook zsh)"
   export PATH=${GOPATH}/src/github.com/rbenv/rbenv/bin:${PATH} && \
     eval "$(rbenv init -)"
 source ~/.tmuxinator/tmuxinator.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f /usr/local/google-cloud-sdk/path.zsh.inc ]; then
+  source '/usr/local/google-cloud-sdk/path.zsh.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /usr/local/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/usr/local/google-cloud-sdk/completion.zsh.inc'
+fi

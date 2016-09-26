@@ -2,5 +2,5 @@
 set lines=60
 " ウインドウの幅
 set columns=180
-" solarized
+
 colorscheme solarized

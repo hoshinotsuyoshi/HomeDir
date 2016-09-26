@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/cesario/.vim/bundle/neobundle.vim/
+set runtimepath^=/Users/hoshino/.vim/bundle/neobundle.vim/
 
 " Required:
-call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
+call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -37,7 +37,7 @@ NeoBundleCheck
 
 "<Unite>
 "NeoBundle Scripts-----------------------------
-call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
+call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 call neobundle#end()
@@ -65,7 +65,7 @@ nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mr
 "</Unite>
 
 "NeoBundle Scripts-----------------------------
-call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
+call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
 " tags
 NeoBundle 'szw/vim-tags'
 " powerline
@@ -79,7 +79,7 @@ call neobundle#end()
 "<ag>
 "NeoBundle Scripts-----------------------------
 "vimproc
-call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
+call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
