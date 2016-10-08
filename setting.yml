@@ -1,7 +1,7 @@
 :brew:
   - ctags
   - direnv
-  - doxygen # surpress warning by `brew doctor`
+  - doxygen # suppress warning by `brew doctor`
   - git
   - gnu-sed
   - gnu-tar
