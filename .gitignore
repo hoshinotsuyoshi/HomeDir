@@ -67,3 +67,4 @@ vendor/bundle
 go/
 google-cloud-sdk/
 *.local.yml
+.ecs
