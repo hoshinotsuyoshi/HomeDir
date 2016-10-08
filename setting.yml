@@ -2,6 +2,7 @@
   - ctags
   - direnv
   - doxygen # suppress warning by `brew doctor`
+  - elasticsearch
   - git
   - gnu-sed
   - gnu-tar
@@ -16,9 +17,11 @@
   - nkf
   - peco
   - pinentry-mac #gpg
+  - postgresql
   - pwgen
   # - qt
   - reattach-to-user-namespace
+  - redis
   - the_silver_searcher
   - tig
   - tmux
@@ -33,6 +36,7 @@
   - google-chrome
   - google-japanese-ime
   - karabiner
+  - java # for elasticsearch
   - macvim
   - skitch
   - vagrant
