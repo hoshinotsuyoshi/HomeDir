@@ -159,6 +159,12 @@ whence direnv >/dev/null && eval "$(direnv hook zsh)"
     eval "$(rbenv init -)"
 source ~/.tmuxinator/tmuxinator.zsh
 
+PATH="/Users/cesario/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/cesario/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/cesario/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/cesario/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/cesario/perl5"; export PERL_MM_OPT;
+
 # gpg
 # https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
 if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
