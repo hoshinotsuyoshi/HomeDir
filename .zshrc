@@ -158,3 +158,12 @@ whence direnv >/dev/null && eval "$(direnv hook zsh)"
   export PATH=${GOPATH}/src/github.com/rbenv/rbenv/bin:${PATH} && \
     eval "$(rbenv init -)"
 source ~/.tmuxinator/tmuxinator.zsh
+
+# gpg
+# https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source ~/.gnupg/.gpg-agent-info
+    export GPG_AGENT_INFO
+else
+    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi

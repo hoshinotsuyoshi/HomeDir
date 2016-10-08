@@ -5,6 +5,7 @@
   - git
   - gnu-sed
   - gnu-tar
+  - gpg # gpg
   - go
   - heroku-toolbelt
   - hub
@@ -14,6 +15,7 @@
   - nodenv
   - nkf
   - peco
+  - pinentry-mac #gpg
   - pwgen
   # - qt
   - reattach-to-user-namespace
