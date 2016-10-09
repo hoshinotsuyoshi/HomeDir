@@ -1,6 +1,6 @@
 "NeoBundle Scripts-----------------------------
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible               " Be improved
 endif
 
 " Required:
@@ -19,6 +19,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'vim-ruby/vim-ruby'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -73,7 +74,6 @@ NeoBundle 'powerline/powerline' , {'rtp': 'powerline/bindings/vim/'}
 call neobundle#end()
 "End NeoBundle Scripts-------------------------
 
-
 " ag & Unite.vim integration
 " http://blog.monochromegane.com/blog/2013/09/18/ag-and-unite/
 "<ag>
@@ -121,7 +121,6 @@ set number
 set paste
 set noswapfile
 set nobackup
-set autoindent
 
 " yankしたときにclipboardにもコピーする(なんかうまくいかない)
 set clipboard=unnamed
@@ -220,13 +219,9 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 " un~の無視
 :set noundofile
 
-
 " golang
 " http://qiita.com/uchiko/items/4c186292f007535116cc
 filetype off
-filetype plugin indent off
-" set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
 syntax on
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
