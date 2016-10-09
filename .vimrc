@@ -100,9 +100,11 @@ endif
 
 set ts=2 sts=2 sw=2 expandtab
 set number
-set paste
 set noswapfile
 set nobackup
+
+" set pasteしない
+"set paste
 
 " yankしたときにclipboardにもコピーする(なんかうまくいかない)
 set clipboard=unnamed
