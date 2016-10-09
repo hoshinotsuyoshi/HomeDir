@@ -13,10 +13,30 @@ call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Add or remove your Bundles here:
 NeoBundle 'flazz/vim-colorschemes'
+
+" vim-ruby
 NeoBundle 'vim-ruby/vim-ruby'
 
+" Unite
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+
+" ctags
+NeoBundle 'szw/vim-tags'
+" powerline
+NeoBundle 'powerline/powerline' , {'rtp': 'powerline/bindings/vim/'}
+
+"vimproc
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 " Required:
 call neobundle#end()
 
@@ -30,13 +50,6 @@ NeoBundleCheck
 
 
 "<Unite>
-"NeoBundle Scripts-----------------------------
-call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-call neobundle#end()
-"End NeoBundle Scripts-------------------------
-
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
 
@@ -58,33 +71,9 @@ nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 "</Unite>
 
-"NeoBundle Scripts-----------------------------
-call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
-" tags
-NeoBundle 'szw/vim-tags'
-" powerline
-NeoBundle 'powerline/powerline' , {'rtp': 'powerline/bindings/vim/'}
-call neobundle#end()
-"End NeoBundle Scripts-------------------------
-
+"<ag>
 " ag & Unite.vim integration
 " http://blog.monochromegane.com/blog/2013/09/18/ag-and-unite/
-"<ag>
-"NeoBundle Scripts-----------------------------
-"vimproc
-call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-call neobundle#end()
-"End NeoBundle Scripts-------------------------
-
 " insert modeで開始
 let g:unite_enable_start_insert = 1
 
