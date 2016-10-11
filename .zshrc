@@ -168,3 +168,18 @@ fi
 if [ -f /usr/local/google-cloud-sdk/completion.zsh.inc ]; then
   source '/usr/local/google-cloud-sdk/completion.zsh.inc'
 fi
+
+PATH="/Users/hoshino/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/hoshino/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/hoshino/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/hoshino/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/hoshino/perl5"; export PERL_MM_OPT;
+
+# gpg
+# https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+    source ~/.gnupg/.gpg-agent-info
+    export GPG_AGENT_INFO
+else
+    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
