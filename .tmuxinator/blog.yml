@@ -1,0 +1,14 @@
+# ~/.tmuxinator/standard.yml
+
+name: blog
+root: ~/
+
+windows:
+  - github:
+      layout: main-horizontal
+      panes:
+        - pane1:
+          - cd $GOPATH/src/github.com/hoshinotsuyoshi/hoshinotsuyoshi.com
+        - pane2:
+          - cd $GOPATH/src/github.com/hoshinotsuyoshi/hoshinotsuyoshi.com
+          - rake s

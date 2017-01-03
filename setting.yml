@@ -10,12 +10,14 @@
   - go
   - heroku-toolbelt
   - hub
+  - hugo
   - jq
   - lha
   - mysql
   - nodenv
   - nkf
   - peco
+  - phantomjs
   - pinentry-mac #gpg
   - postgresql
   - pwgen
@@ -29,6 +31,7 @@
   - vim
   - watch
   - wget
+  - yarn
   - z
   - zsh
 :cask:
