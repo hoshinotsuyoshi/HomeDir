@@ -1,4 +1,4 @@
-# ~/.tmuxinator/standard.yml
+# ~/.tmuxinator/blog.yml
 
 name: blog
 root: ~/
@@ -9,6 +9,8 @@ windows:
       panes:
         - pane1:
           - cd $GOPATH/src/github.com/hoshinotsuyoshi/hoshinotsuyoshi.com
+          - sleep 2
+          - open http://localhost:1313
         - pane2:
           - cd $GOPATH/src/github.com/hoshinotsuyoshi/hoshinotsuyoshi.com
           - rake s
