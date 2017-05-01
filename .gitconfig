@@ -18,7 +18,7 @@
   templatedir = ~/.git_template
 [commit]
   template = /Users/hoshino/.commit_template
-[gpg]
-	program = /usr/local/bin/gpg
+#[gpg]
+#	program = /usr/local/bin/gpg
 #[commit]
 #	gpgsign = true

@@ -2,7 +2,7 @@
   - ctags
   - direnv
   - doxygen # suppress warning by `brew doctor`
-  - elasticsearch
+  # - elasticsearch
   - git
   - gnu-sed
   - gnu-tar
@@ -32,12 +32,12 @@
   - z
   - zsh
 :cask:
-  - clipmenu
+  # - clipmenu
   - google-chrome
   - google-japanese-ime
-  - karabiner
-  - java # for elasticsearch
+  # - karabiner
+  # - java # for elasticsearch
   - macvim
   - skitch
-  - vagrant
-  - virtualbox
+  # - vagrant
+  # - virtualbox
