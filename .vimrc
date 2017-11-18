@@ -13,30 +13,19 @@ call neobundle#begin(expand('/Users/cesario/.vim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" Add or remove your Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 
-" vim-ruby
-NeoBundle 'vim-ruby/vim-ruby'
+" golang
+NeoBundle 'vim-jp/vim-go-extra'
 
-" Unite
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
+" You can specify revision/branch/tag.
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
-" ctags
-NeoBundle 'szw/vim-tags'
-" powerline
-NeoBundle 'powerline/powerline' , {'rtp': 'powerline/bindings/vim/'}
-
-"vimproc
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
 " Required:
 call neobundle#end()
 
@@ -48,63 +37,11 @@ filetype plugin indent on
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
-
-"<Unite>
-let g:unite_source_history_yank_enable =1
-let g:unite_source_file_mru_limit = 200
-
-" 入力モードで開始する
-let g:unite_enable_start_insert=1
-" バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-" ファイル一覧
-nnoremap <silent> ,uF :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" 再帰的にファイル一覧
-nnoremap <silent> ,uf :<C-u>Unite file_rec <CR>
-" レジスタ一覧
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-" 最近使用したファイル一覧
-nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
-" 常用セット
-nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
-" 全部乗せ
-nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-"</Unite>
-
-"<ag>
-" ag & Unite.vim integration
-" http://blog.monochromegane.com/blog/2013/09/18/ag-and-unite/
-" insert modeで開始
-let g:unite_enable_start_insert = 1
-
-" 大文字小文字を区別しない
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
-
-" grep検索
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-
-" カーソル位置の単語をgrep検索
-nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-
-" grep検索結果の再呼出
-nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
-
-" unite grep に ag(The Silver Searcher) を使う
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-"</ag>
-
 set ts=2 sts=2 sw=2 expandtab
 set number
 set noswapfile
 set nobackup
-
-" set pasteしない
-"set paste
+set autoindent
 
 " yankしたときにclipboardにもコピーする(なんかうまくいかない)
 set clipboard=unnamed
@@ -141,6 +78,8 @@ let g:netrw_liststyle = 3
 let g:netrw_altv = 1
 " netrwは'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
 let g:netrw_alto = 1
+
+set encoding=utf-8
 
 " http://qiita.com/wadako111/items/755e753677dd72d8036d
 " Anywhere SID.
@@ -203,9 +142,13 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 " un~の無視
 :set noundofile
 
+
 " golang
 " http://qiita.com/uchiko/items/4c186292f007535116cc
 filetype off
+filetype plugin indent off
+" set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
 syntax on
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
