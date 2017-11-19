@@ -14,17 +14,11 @@ call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 
 " golang
 NeoBundle 'vim-jp/vim-go-extra'
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 " Required:
 call neobundle#end()
@@ -43,10 +37,10 @@ set noswapfile
 set nobackup
 set autoindent
 
-" yankしたときにclipboardにもコピーする(なんかうまくいかない)
+" yankしたときにclipboardにもコピーする
 set clipboard=unnamed
 
-" fileformat=unix にしておけば CrLf は ^M で表示されるらしい
+" fileformat=unix にしておけば CrLf は ^M で表示される
 set fileformat=unix
 
 syntax enable
@@ -146,9 +140,6 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 " golang
 " http://qiita.com/uchiko/items/4c186292f007535116cc
 filetype off
-filetype plugin indent off
-" set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
 syntax on
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
