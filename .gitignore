@@ -54,6 +54,7 @@ Applications/
 work/
 .rbenv
 vendor/bundle
+tmux-*.log
 
 
 .boot2docker/

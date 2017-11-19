@@ -183,3 +183,12 @@ PERL_MM_OPT="INSTALL_BASE=/Users/hoshino/perl5"; export PERL_MM_OPT;
 # else
 #     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 # fi
+
+### Virtualenvwrapper
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+export DISABLE_AUTO_TITLE=true
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"

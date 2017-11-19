@@ -253,6 +253,12 @@ if expand("%:t") =~ ".*\.rake"
   set softtabstop=2
   set shiftwidth=2
 endif
+if expand("%:t") =~ ".*\.rabl"
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+endif
 if expand("%:t") =~ ".*Rakefile"
   set expandtab
   set tabstop=2
@@ -277,3 +283,13 @@ nnoremap <C-]> g<C-]>
 
 " 別タブを開いてタグジャンプ
 nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
+
+" https://gist.github.com/pinzolo/8168337
+" 指定のデータをレジスタに登録する
+function! s:Clip(data)
+  let @*=a:data
+  echo "clipped: " . a:data
+endfunction
+
+" 現在開いているファイルのパスをレジスタへ
+command! -nargs=0 ClipPath call s:Clip(expand('%:p'))
