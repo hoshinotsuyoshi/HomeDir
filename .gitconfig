@@ -1,21 +1,24 @@
 [user]
   email = guitarpopnot330@gmail.com
   name = hoshinotsuyoshi
-	signingkey = C06827B443E51564
+  #signingkey = C06827B443E51564
 [alias]
   st = status -s
   cdiff = diff --word-diff=color --word-diff-regex=.
   co = checkout
-  cv = commit -v -s --no-signoff
+  #cv = commit -v -s --no-signoff
+  cv = commit -v
   merge = merge --gpg-sign
 [core]
   editor = vim -c \"set fenc=utf-8\"
-  excludesfile = /Users/cesario/.gitignore_global
+  excludesfile = /Users/hoshino/.gitignore_global
 [push]
 	default = simple
 [init]
   templatedir = ~/.git_template
-[gpg]
-	program = /usr/local/bin/gpg
 [commit]
-	gpgsign = true
+  template = /Users/hoshino/.commit_template
+#[gpg]
+#	program = /usr/local/bin/gpg
+#[commit]
+#	gpgsign = true
