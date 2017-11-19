@@ -3,9 +3,8 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 ### go
 if [ -x "`which go`" ]; then
-      export GOROOT=`go env GOROOT`
       export GOPATH=$HOME/go
-      export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+      export PATH=$PATH:$GOPATH/bin
 fi
 
 ### Added by the Heroku Toolbelt
@@ -184,11 +183,13 @@ PERL_MM_OPT="INSTALL_BASE=/Users/hoshino/perl5"; export PERL_MM_OPT;
 #     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 # fi
 
-### Virtualenvwrapper
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
 export DISABLE_AUTO_TITLE=true
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+
+# nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+# aws command completion
+# http://qiita.com/szk3/items/dfba6ec3cefdefb35060
+source /usr/local/bin/aws_zsh_completer.sh

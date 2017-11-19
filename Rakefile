@@ -58,6 +58,7 @@ task :rbenv do
   %w(
     github.com/rbenv/rbenv
     github.com/rbenv/ruby-build
+    github.com/rbenv/rbenv-default-gems
   ).each do |text|
     system "go get #{text}"
   end
@@ -69,11 +70,22 @@ task :rbenv do
   unless File.exist?("#{home}/.rbenv/plugins/ruby-build")
     ln_s "#{gopath}/src/github.com/rbenv/ruby-build", "#{home}/.rbenv/plugins"
   end
+
+  unless File.exist?("#{home}/.rbenv/plugins/rbenv-default-gems")
+    ln_s "#{gopath}/src/github.com/rbenv/rbenv-default-gems", "#{home}/.rbenv/plugins"
+  end
+
+  puts "==== default gem by rbenv-default-gems ===="
+
+  File.write("#{home}/.rbenv/default-gems", %w[
+             bundler
+             pry
+             ].join("\n"))
 end
 
 desc 'setup ruby'
 task :ruby do
-  sh 'rbenv install 2.3.1'
+  sh 'rbenv install 2.4.1'
 end
 
 desc 'setup ssh client'

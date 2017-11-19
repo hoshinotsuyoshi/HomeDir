@@ -10,6 +10,7 @@
   - go
   - heroku-toolbelt
   - hub
+  - hugo
   - imagemagick
   - jq
   - lha
@@ -17,6 +18,7 @@
   - nodenv
   - nkf
   - peco
+  - phantomjs
   - pinentry-mac #gpg
   - postgresql
   - pwgen
@@ -30,6 +32,7 @@
   - vim
   - watch
   - wget
+  - yarn
   - z
   - zsh
 :cask:
