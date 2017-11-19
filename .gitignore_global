@@ -25,3 +25,5 @@ vendor/bundle
 node_modules
 
 .ruby-version
+
+.yardoc

@@ -3,9 +3,8 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 ### go
 if [ -x "`which go`" ]; then
-      export GOROOT=`go env GOROOT`
       export GOPATH=$HOME/go
-      export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+      export PATH=$PATH:$GOPATH/bin
 fi
 
 ### Added by the Heroku Toolbelt
@@ -177,3 +176,7 @@ fi
 # nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
+
+# aws command completion
+# http://qiita.com/szk3/items/dfba6ec3cefdefb35060
+source /usr/local/bin/aws_zsh_completer.sh
