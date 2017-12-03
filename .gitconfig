@@ -11,13 +11,11 @@
   merge = merge --gpg-sign
 [core]
   editor = vim -c \"set fenc=utf-8\"
-  excludesfile = /Users/hoshino/.gitignore_global
+  excludesfile = /Users/cesario/.gitignore_global
 [push]
 	default = simple
 [init]
   templatedir = ~/.git_template
-[commit]
-  template = /Users/hoshino/.commit_template
 #[gpg]
 #	program = /usr/local/bin/gpg
 #[commit]

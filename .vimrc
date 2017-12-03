@@ -43,16 +43,14 @@ set noswapfile
 set nobackup
 set autoindent
 
-" yankしたときにclipboardにもコピーする(なんかうまくいかない)
 set clipboard=unnamed
 
-" fileformat=unix にしておけば CrLf は ^M で表示されるらしい
+" fileformat=unix にしておけば CrLf は ^M で表示される
 set fileformat=unix
 
 syntax enable
 " set background=dark
 set background=light
-" let g:solarized_termcolors=256
 
 " https://github.com/cyborgninja/vimrc/blob/master/.vimrc
 "
