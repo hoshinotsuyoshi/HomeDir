@@ -58,7 +58,6 @@ tmux-*.log
 
 
 .boot2docker/
-.config/
 .docker/
 .esets/
 .gsutil/
