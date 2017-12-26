@@ -1,3 +1,63 @@
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/Users/hoshino/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/Users/hoshino/.cache/dein')
+  call dein#begin('/Users/hoshino/.cache/dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/hoshino/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  " call dein#add('Shougo/neosnippet.vim')
+  " call dein#add('Shougo/neosnippet-snippets')
+
+  " You can specify revision/branch/tag.
+  " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
+  let s:toml = '~/.config/nvim/dein.toml'
+  call dein#load_toml(s:toml, {'lazy': 0})
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
+
+" denite
+" http://shotat.hateblo.jp/entry/2016/09/30/230000 --------------
+call denite#custom#var('file_rec', 'command',
+      \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#var('grep', 'separator', [])
+call denite#custom#var('grep', 'default_opts',
+      \ ['--nocolor', '--nogroup'])
+
+nnoremap <silent> <C-u><C-f> :<C-u>Denite file_rec<CR>
+nnoremap <silent> <C-u><C-g> :<C-u>Denite grep<CR>
+nnoremap <silent> <C-u><C-l> :<C-u>Denite line<CR>
+nnoremap <silent> <C-u><C-u> :<C-u>Denite file_mru<CR>
+"End denite -------------------
+
+
 " true color
 set termguicolors
 colorscheme iceberg
