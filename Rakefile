@@ -149,6 +149,11 @@ task :fonts_powerline do
   end
 end
 
+task :iceberg do
+  sh 'go get github.com/cocopon/iceberg.vim || true'
+  sh 'ln -s ~/go/src/github.com/cocopon/iceberg.vim/colors/iceberg.vim /usr/local/share/nvim/runtime/colors/iceberg.vim'
+end
+
 desc 'install docker'
 task :docker do
   puts 'use docker-for-mac'
