@@ -1,10 +1,10 @@
 "NeoBundle Scripts-----------------------------
 if &compatible
-  set nocompatible               " Be improved
+  set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath^=/Users/hoshino/.vim/bundle/neobundle.vim/
+set runtimepath+=/Users/hoshino/.vim/bundle/neobundle.vim/
 
 " Required:
 call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
@@ -14,11 +14,14 @@ call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 
-" golang
-NeoBundle 'vim-jp/vim-go-extra'
+" You can specify revision/branch/tag.
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 " Required:
 call neobundle#end()
@@ -30,6 +33,7 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
+
 
 set ts=2 sts=2 sw=2 expandtab
 set number
