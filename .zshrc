@@ -193,3 +193,6 @@ eval "$(nodenv init -)"
 # aws command completion
 # http://qiita.com/szk3/items/dfba6ec3cefdefb35060
 source /usr/local/bin/aws_zsh_completer.sh
+
+# http://www.pandanoir.info/entry/2016/12/30/190000
+alias nvim='VIM=/usr/local/Cellar/neovim/0.2.2/share/nvim nvim'
