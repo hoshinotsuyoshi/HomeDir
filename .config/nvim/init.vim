@@ -51,10 +51,10 @@ call denite#custom#var('grep', 'separator', [])
 call denite#custom#var('grep', 'default_opts',
       \ ['--nocolor', '--nogroup'])
 
-nnoremap <silent> <C-u><C-f> :<C-u>Denite file_rec<CR>
-nnoremap <silent> <C-u><C-g> :<C-u>Denite grep<CR>
-nnoremap <silent> <C-u><C-l> :<C-u>Denite line<CR>
-nnoremap <silent> <C-u><C-u> :<C-u>Denite file_mru<CR>
+nnoremap <silent> <Space>f :<C-u>Denite file_rec<CR>
+nnoremap <silent> <Space>g :<C-u>Denite grep<CR>
+nnoremap <silent> <Space>l :<C-u>Denite line<CR>
+nnoremap <silent> <Space>u :<C-u>Denite file_mru<CR>
 "End denite -------------------
 
 
