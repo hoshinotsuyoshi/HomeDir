@@ -176,12 +176,15 @@ PERL_MM_OPT="INSTALL_BASE=/Users/hoshino/perl5"; export PERL_MM_OPT;
 
 # gpg
 # https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-else
-    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-fi
+# if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+#     source ~/.gnupg/.gpg-agent-info
+#     export GPG_AGENT_INFO
+# else
+#     eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+# fi
+
+export DISABLE_AUTO_TITLE=true
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
 # nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"

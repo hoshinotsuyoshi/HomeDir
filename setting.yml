@@ -11,6 +11,7 @@
   - heroku-toolbelt
   - hub
   - hugo
+  - imagemagick
   - jq
   - lha
   - mysql

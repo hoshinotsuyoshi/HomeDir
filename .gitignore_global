@@ -27,3 +27,5 @@ node_modules
 .ruby-version
 
 .yardoc
+
+dump.sql

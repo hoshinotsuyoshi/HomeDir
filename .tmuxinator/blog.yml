@@ -8,9 +8,9 @@ windows:
       layout: main-horizontal
       panes:
         - pane1:
-          - cd /Users/cesario/go/src/github.com/hoshinotsuyoshi/hoshinotsuyoshi.com
+          - cd /Users/hoshino/go/src/github.com/hoshinotsuyoshi/hoshinotsuyoshi.com
           - sleep 2
           - open http://localhost:1313
         - pane2:
-          - cd /Users/cesario/go/src/github.com/hoshinotsuyoshi/hoshinotsuyoshi.com
+          - cd /Users/hoshino/go/src/github.com/hoshinotsuyoshi/hoshinotsuyoshi.com
           - rake s

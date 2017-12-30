@@ -109,6 +109,14 @@ task :symlink do
   end
 end
 
+desc 'set up init.vim'
+task :init_vim do
+  home = ENV.fetch('HOME'){ abort('You should set $HOME') }
+  mkdir_p "#{home}/.config/nvim"
+  link = "#{home}/.config/nvim/init.vim"
+  ln_s "#{Dir.pwd}/.config/nvim/init.vim", link unless File.exist?(link)
+end
+
 desc 'login shell'
 task :login_shell do
   puts "==== how to change login shell ===="
@@ -147,6 +155,11 @@ task :fonts_powerline do
   Dir.chdir "#{ENV['GOPATH']}/src/github.com/powerline/fonts" do
     sh './install.sh'
   end
+end
+
+task :iceberg do
+  sh 'go get github.com/cocopon/iceberg.vim || true'
+  sh 'ln -s ~/go/src/github.com/cocopon/iceberg.vim/colors/iceberg.vim /usr/local/share/nvim/runtime/colors/iceberg.vim'
 end
 
 desc 'install docker'

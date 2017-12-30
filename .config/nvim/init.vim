@@ -1,47 +1,74 @@
-"NeoBundle Scripts-----------------------------
+"dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath+=/Users/hoshino/.vim/bundle/neobundle.vim/
+set runtimepath+=/Users/hoshino/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call neobundle#begin(expand('/Users/hoshino/.vim/bundle'))
+if dein#load_state('/Users/hoshino/.cache/dein')
+  call dein#begin('/Users/hoshino/.cache/dein')
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/hoshino/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-" Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
+  " Add or remove your plugins here:
+  " call dein#add('Shougo/neosnippet.vim')
+  " call dein#add('Shougo/neosnippet-snippets')
 
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+  " You can specify revision/branch/tag.
+  " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
+  let s:toml = '~/.config/nvim/dein.toml'
+  call dein#load_toml(s:toml, {'lazy': 0})
 
-" Required:
-call neobundle#end()
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
 " Required:
 filetype plugin indent on
+syntax enable
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
+
+" denite
+" http://shotat.hateblo.jp/entry/2016/09/30/230000 --------------
+call denite#custom#var('file_rec', 'command',
+      \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#var('grep', 'separator', [])
+call denite#custom#var('grep', 'default_opts',
+      \ ['--nocolor', '--nogroup'])
+
+nnoremap <silent> <Space>f :<C-u>Denite file_rec<CR>
+nnoremap <silent> <Space>g :<C-u>Denite grep<CR>
+nnoremap <silent> <Space>l :<C-u>Denite line<CR>
+nnoremap <silent> <Space>u :<C-u>Denite file_mru<CR>
+"End denite -------------------
 
 
+" true color
+set termguicolors
+colorscheme iceberg
+
+"""""""""以上がneovim独自設定
 set ts=2 sts=2 sw=2 expandtab
 set number
 set noswapfile
 set nobackup
 set autoindent
 
-" yankしたときにclipboardにもコピーする
 set clipboard=unnamed
 
 " fileformat=unix にしておけば CrLf は ^M で表示される
@@ -143,6 +170,9 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 " golang
 " http://qiita.com/uchiko/items/4c186292f007535116cc
 filetype off
+filetype plugin indent off
+" set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
 syntax on
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
@@ -165,12 +195,6 @@ if expand("%:t") =~ ".*\.rb"
   set shiftwidth=2
 endif
 if expand("%:t") =~ ".*\.rake"
-  set expandtab
-  set tabstop=2
-  set softtabstop=2
-  set shiftwidth=2
-endif
-if expand("%:t") =~ ".*\.rabl"
   set expandtab
   set tabstop=2
   set softtabstop=2
@@ -200,13 +224,3 @@ nnoremap <C-]> g<C-]>
 
 " 別タブを開いてタグジャンプ
 nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
-
-" https://gist.github.com/pinzolo/8168337
-" 指定のデータをレジスタに登録する
-function! s:Clip(data)
-  let @*=a:data
-  echo "clipped: " . a:data
-endfunction
-
-" 現在開いているファイルのパスをレジスタへ
-command! -nargs=0 ClipPath call s:Clip(expand('%:p'))

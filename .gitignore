@@ -1,4 +1,4 @@
-[berlin]
+[cesario]
 .CFUserTextEncoding
 .DS_Store
 .Trash
@@ -54,10 +54,10 @@ Applications/
 work/
 .rbenv
 vendor/bundle
+tmux-*.log
 
 
 .boot2docker/
-.config/
 .docker/
 .esets/
 .gsutil/
