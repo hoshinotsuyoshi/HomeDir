@@ -4,15 +4,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/hoshino/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/cesario/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/hoshino/.cache/dein')
-  call dein#begin('/Users/hoshino/.cache/dein')
+if dein#load_state('/Users/cesario/.cache/dein')
+  call dein#begin('/Users/cesario/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/hoshino/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/cesario/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   " call dein#add('Shougo/neosnippet.vim')
@@ -20,7 +20,7 @@ if dein#load_state('/Users/hoshino/.cache/dein')
 
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
-  let s:toml = '~/.config/nvim/dein.toml'
+  let s:toml = '/Users/cesario/HomeDir/.config/nvim/dein.toml'
   call dein#load_toml(s:toml, {'lazy': 0})
 
   " Required:
