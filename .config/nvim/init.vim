@@ -55,6 +55,9 @@ nnoremap <silent> <Space>f :<C-u>Denite file_rec<CR>
 nnoremap <silent> <Space>g :<C-u>Denite grep<CR>
 nnoremap <silent> <Space>l :<C-u>Denite line<CR>
 nnoremap <silent> <Space>u :<C-u>Denite file_mru<CR>
+
+nnoremap <silent> <Space>r :<C-u>Denite command_history<CR>
+nnoremap <silent> <Space>b :<C-u>Denite buffer<CR>
 "End denite -------------------
 
 
