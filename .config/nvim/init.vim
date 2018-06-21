@@ -62,7 +62,7 @@ nnoremap <silent> <Space>b :<C-u>Denite buffer<CR>
 
 
 " true color
-set termguicolors
+" set termguicolors
 colorscheme iceberg
 
 """""""""以上がneovim独自設定
