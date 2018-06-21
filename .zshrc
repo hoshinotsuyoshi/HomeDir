@@ -1,5 +1,6 @@
 alias ll='ls -alF'
 alias ctags="`brew --prefix`/bin/ctags"
+##alias rspec='(){ rspec "$*" ; say "アールスペックが終わりました" }'
 
 ### go
 if [ -x "`which go`" ]; then
@@ -195,3 +196,5 @@ eval "$(nodenv init -)"
 source /usr/local/bin/aws_zsh_completer.sh
 
 alias v='nvim'
+
+eval "$(pyenv init -)"

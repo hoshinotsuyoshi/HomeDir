@@ -196,6 +196,8 @@ if expand("%:t") =~ ".*\.rb"
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2
+  set spell
+  set spelllang=en,cjk
 endif
 if expand("%:t") =~ ".*\.rake"
   set expandtab
