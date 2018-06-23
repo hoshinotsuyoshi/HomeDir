@@ -50,12 +50,28 @@ call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 
 nnoremap <silent> <Space>f :<C-u>Denite file_rec<CR>
-nnoremap <silent> <Space>g :<C-u>Denite grep<CR>
+"nnoremap <silent> <Space>g :<C-u>Denite grep<CR>
 nnoremap <silent> <Space>l :<C-u>Denite line<CR>
 nnoremap <silent> <Space>u :<C-u>Denite file_mru<CR>
 
 nnoremap <silent> <Space>r :<C-u>Denite command_history<CR>
 nnoremap <silent> <Space>b :<C-u>Denite buffer<CR>
+
+" denite grep
+" https://qiita.com/pocari/items/1b76c211d5555fa87834
+nnoremap [denitegrep] <Nop>
+nmap <silent> <Space>g [denitegrep]
+
+" -buffer-name=
+nnoremap <silent> [denitegrep]g  :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+
+" Denite grep検索結果を再表示する
+nnoremap <silent> [denitegrep]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+" resumeした検索結果の次の行の結果へ飛ぶ
+nnoremap <silent> [denitegrep]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
+" resumeした検索結果の前の行の結果へ飛ぶ
+nnoremap <silent> [denitegrep]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
+
 "End denite -------------------
 
 
