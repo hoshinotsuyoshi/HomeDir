@@ -13,3 +13,9 @@ repo = 'justinmk/vim-dirvish'
 [[plugins]]
 repo = 'fishbullet/deoplete-ruby'
 on_ft = 'ruby'
+
+[[plugins]]
+repo = 'tonchis/vim-to-github'
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
