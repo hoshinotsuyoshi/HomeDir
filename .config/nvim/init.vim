@@ -285,3 +285,15 @@ nnoremap <silent> <C-]> :call fzf#vim#tags(expand('<cword>'))<CR>
 
 " fzfからファイルにジャンプできるようにする
 let g:fzf_buffers_jump = 1
+
+
+" Auto fix
+" https://wonderwall.hatenablog.com/entry/2017/03/01/223934
+" https://github.com/w0rp/ale/issues/732
+let g:ale_fixers = {
+\   'ruby': ['rubocop'],
+\}
+let g:ale_enabled = 1
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = '🚫'
+let g:ale_sign_warning = '✋'
