@@ -265,15 +265,22 @@ endif
 set spell
 set spelllang=en,cjk
 
-" ctags
-" tagsジャンプの時に複数ある時は一覧表示
-nnoremap <C-]> g<C-]>
-
 " 別タブを開いてタグジャンプ
 nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
-
 
 " GitHubで開く https://github.com/tonchis/vim-to-github
 nnoremap <silent> <Space><Space>g :<C-u>ToGithub<CR>
 
 inoremap <silent> jj <ESC>
+
+" ctags
+" https://qiita.com/hisawa/items/fc5300a526cb926aef08
+set rtp+=/usr/local/opt/fzf
+" deniteと合わせて上部に表示
+let g:fzf_layout = { 'up': '~40%' }
+
+" <C-]>でタグ検索
+nnoremap <silent> <C-]> :call fzf#vim#tags(expand('<cword>'))<CR>
+
+" fzfからファイルにジャンプできるようにする
+let g:fzf_buffers_jump = 1
