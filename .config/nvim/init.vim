@@ -271,6 +271,7 @@ nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
 " GitHubで開く https://github.com/tonchis/vim-to-github
 nnoremap <silent> <Space><Space>g :<C-u>ToGithub<CR>
 
+" jjでEscape
 inoremap <silent> jj <ESC>
 
 " ctags
