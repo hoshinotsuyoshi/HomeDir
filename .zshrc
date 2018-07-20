@@ -157,6 +157,7 @@ whence direnv >/dev/null && eval "$(direnv hook zsh)"
 [[ -d ~/.rbenv  ]] && \
   export PATH=${GOPATH}/src/github.com/rbenv/rbenv/bin:${PATH} && \
     eval "$(rbenv init -)"
+
 source ~/.tmuxinator/tmuxinator.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -198,3 +199,7 @@ source /usr/local/bin/aws_zsh_completer.sh
 alias v='nvim'
 
 eval "$(pyenv init -)"
+
+# avoid brew-doctor warning
+# https://qiita.com/takuya0301/items/695f42f6904e979f0152
+alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
