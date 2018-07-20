@@ -79,6 +79,9 @@ nnoremap <silent> [denitegrep]p :<C-u>Denite -resume -buffer-name=search-buffer-
 " set termguicolors
 colorscheme iceberg
 
+" https://github.com/todesking/ruby_hl_lvar.vim
+let g:ruby_hl_lvar_hl_group = 'Title'
+
 """""""""以上がneovim独自設定
 set ts=2 sts=2 sw=2 expandtab
 set number
