@@ -29,6 +29,7 @@ node_modules
 .yardoc
 
 dump.sql
+dump.test.sql
 
 # ansible vault
 .vault_pass

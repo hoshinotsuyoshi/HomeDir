@@ -192,11 +192,9 @@ export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
-# aws command completion
-# http://qiita.com/szk3/items/dfba6ec3cefdefb35060
-source /usr/local/bin/aws_zsh_completer.sh
-
 alias v='nvim'
+alias g='git'
+# alias rubocop='rubocop-daemon-wrapper'
 
 eval "$(pyenv init -)"
 

@@ -221,6 +221,14 @@ if expand("%:t") =~ ".*\.rake"
   set softtabstop=2
   set shiftwidth=2
 endif
+if expand("%:t") =~ ".*\.ruby"
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set spell
+  set spelllang=en,cjk
+endif
 if expand("%:t") =~ ".*Rakefile"
   set expandtab
   set tabstop=2
