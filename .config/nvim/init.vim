@@ -76,8 +76,9 @@ nnoremap <silent> [denitegrep]p :<C-u>Denite -resume -buffer-name=search-buffer-
 
 
 " true color
-" set termguicolors
+set termguicolors
 colorscheme iceberg
+" colorscheme nord
 
 " https://github.com/todesking/ruby_hl_lvar.vim
 " ruby_hl_lvarのデフォルト設定
@@ -95,8 +96,8 @@ set clipboard=unnamed
 set fileformat=unix
 
 syntax enable
-" set background=dark
-set background=light
+set background=dark
+" set background=light
 
 " https://github.com/cyborgninja/vimrc/blob/master/.vimrc
 "
