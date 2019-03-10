@@ -269,6 +269,8 @@ nnoremap <silent> <C-]> :call fzf#vim#tags(expand('<cword>'))<CR>
 " fzfからファイルにジャンプできるようにする
 let g:fzf_buffers_jump = 1
 
+" nvim限定・rubocopへのパス
+let $PATH="/Users/hoshino/.rubocop:".$PATH
 
 " Auto fix
 " https://wonderwall.hatenablog.com/entry/2017/03/01/223934
