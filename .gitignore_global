@@ -24,8 +24,14 @@ vendor/bundle
 .node-version
 node_modules
 
-.ruby-version
+#.ruby-version
 
 .yardoc
 
 dump.sql
+dump.test.sql
+
+# ansible vault
+.vault_pass
+
+.python-version

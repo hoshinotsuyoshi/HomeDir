@@ -1,5 +1,6 @@
 alias ll='ls -alF'
 alias ctags="`brew --prefix`/bin/ctags"
+##alias rspec='(){ rspec "$*" ; say "アールスペックが終わりました" }'
 
 ### go
 if [ -x "`which go`" ]; then
@@ -156,6 +157,7 @@ whence direnv >/dev/null && eval "$(direnv hook zsh)"
 [[ -d ~/.rbenv  ]] && \
   export PATH=${GOPATH}/src/github.com/rbenv/rbenv/bin:${PATH} && \
     eval "$(rbenv init -)"
+
 source ~/.tmuxinator/tmuxinator.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -196,3 +198,12 @@ source /usr/local/bin/aws_zsh_completer.sh
 
 # http://www.pandanoir.info/entry/2016/12/30/190000
 alias nvim='VIM=/usr/local/Cellar/neovim/0.2.2/share/nvim nvim'
+alias v='nvim'
+alias g='git'
+# alias rubocop='rubocop-daemon-wrapper'
+
+eval "$(pyenv init -)"
+
+# avoid brew-doctor warning
+# https://qiita.com/takuya0301/items/695f42f6904e979f0152
+alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"

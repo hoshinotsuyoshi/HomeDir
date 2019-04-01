@@ -40,27 +40,48 @@ syntax enable
 "End dein Scripts-------------------------
 
 " denite
-" http://shotat.hateblo.jp/entry/2016/09/30/230000 --------------
-call denite#custom#var('file_rec', 'command',
-      \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-
+" https://blog.hatappi.me/entry/2017/08/28/191529
+call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
 call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
-call denite#custom#var('grep', 'separator', [])
-call denite#custom#var('grep', 'default_opts',
-      \ ['--nocolor', '--nogroup'])
 
 nnoremap <silent> <Space>f :<C-u>Denite file_rec<CR>
-nnoremap <silent> <Space>g :<C-u>Denite grep<CR>
+"nnoremap <silent> <Space>g :<C-u>Denite grep<CR>
 nnoremap <silent> <Space>l :<C-u>Denite line<CR>
 nnoremap <silent> <Space>u :<C-u>Denite file_mru<CR>
+
+nnoremap <silent> <Space>r :<C-u>Denite command_history<CR>
+nnoremap <silent> <Space>b :<C-u>Denite buffer<CR>
+
+" denite grep
+" https://qiita.com/pocari/items/1b76c211d5555fa87834
+nnoremap [denitegrep] <Nop>
+nmap <silent> <Space>g [denitegrep]
+
+" -buffer-name=
+nnoremap <silent> [denitegrep]g  :<C-u>Denite grep -buffer-name=search-buffer-denite<CR>
+
+" Denite grep検索結果を再表示する
+nnoremap <silent> [denitegrep]r :<C-u>Denite -resume -buffer-name=search-buffer-denite<CR>
+" resumeした検索結果の次の行の結果へ飛ぶ
+nnoremap <silent> [denitegrep]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
+" resumeした検索結果の前の行の結果へ飛ぶ
+nnoremap <silent> [denitegrep]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
+
 "End denite -------------------
 
 
 " true color
 set termguicolors
 colorscheme iceberg
+" colorscheme nord
+
+" https://github.com/todesking/ruby_hl_lvar.vim
+" ruby_hl_lvarのデフォルト設定
 
 """""""""以上がneovim独自設定
 set ts=2 sts=2 sw=2 expandtab
@@ -75,8 +96,8 @@ set clipboard=unnamed
 set fileformat=unix
 
 syntax enable
-" set background=dark
-set background=light
+set background=dark
+" set background=light
 
 " https://github.com/cyborgninja/vimrc/blob/master/.vimrc
 "
@@ -166,7 +187,6 @@ au InsertEnter * highlight StatusLine ctermfg=12 guifg=#1E90FF
 " un~の無視
 :set noundofile
 
-
 " golang
 " http://qiita.com/uchiko/items/4c186292f007535116cc
 filetype off
@@ -193,12 +213,22 @@ if expand("%:t") =~ ".*\.rb"
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2
+  set spell
+  set spelllang=en,cjk
 endif
 if expand("%:t") =~ ".*\.rake"
   set expandtab
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2
+endif
+if expand("%:t") =~ ".*\.ruby"
+  set expandtab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set spell
+  set spelllang=en,cjk
 endif
 if expand("%:t") =~ ".*Rakefile"
   set expandtab
@@ -218,9 +248,120 @@ endif
 set spell
 set spelllang=en,cjk
 
-" ctags
-" tagsジャンプの時に複数ある時は一覧表示
-nnoremap <C-]> g<C-]>
-
 " 別タブを開いてタグジャンプ
 nnoremap <F3> :tab tag <C-R>=expand('<cword>')<CR><CR>
+
+" GitHubで開く https://github.com/tonchis/vim-to-github
+nnoremap <silent> <Space><Space>g :<C-u>ToGithub<CR>
+
+" jjでEscape
+inoremap <silent> jj <ESC>
+
+" ctags
+" https://qiita.com/hisawa/items/fc5300a526cb926aef08
+set rtp+=/usr/local/opt/fzf
+" deniteと合わせて上部に表示
+let g:fzf_layout = { 'up': '~40%' }
+
+" <C-]>でタグ検索
+nnoremap <silent> <C-]> :call fzf#vim#tags(expand('<cword>'))<CR>
+
+" fzfからファイルにジャンプできるようにする
+let g:fzf_buffers_jump = 1
+
+" nvim限定・rubocopへのパス
+let $PATH="/Users/hoshino/.rubocop:".$PATH
+
+" Auto fix
+" https://wonderwall.hatenablog.com/entry/2017/03/01/223934
+" https://github.com/w0rp/ale/issues/732
+let g:ale_fixers = {
+\   'ruby': ['rubocop'],
+\}
+"let g:ale_enabled = 1
+let g:ale_fix_on_save = 1
+
+" <ペースト問題>
+" https://github.com/ConradIrwin/vim-bracketed-paste/blob/d3c8f789c5d956dc658c21dce2e23e8191a1021e/plugin/bracketed-paste.vim
+if exists("g:loaded_bracketed_paste")
+  finish
+endif
+let g:loaded_bracketed_paste = 1
+
+let &t_ti .= "\<Esc>[?2004h"
+let &t_te = "\e[?2004l" . &t_te
+
+function! XTermPasteBegin(ret)
+  set pastetoggle=<f29>
+  set paste
+  return a:ret
+endfunction
+
+execute "set <f28>=\<Esc>[200~"
+execute "set <f29>=\<Esc>[201~"
+map <expr> <f28> XTermPasteBegin("i")
+imap <expr> <f28> XTermPasteBegin("")
+vmap <expr> <f28> XTermPasteBegin("c")
+cmap <f28> <nop>
+cmap <f29> <nop>
+" </ペースト問題>
+
+" https://github.com/nekottyo/dotfiles/blob/d7f4bcb33d14478cd637c14ea8dd24e62b31c643/.config/dein/neovim.toml
+" defx Config: start -----------------
+
+autocmd FileType defx call s:defx_my_settings()
+function! s:defx_my_settings() abort
+  " Define mappings
+  nnoremap <silent><buffer><expr> <CR>
+        \ defx#do_action('open')
+  nnoremap <silent><buffer><expr> c
+        \ defx#do_action('copy')
+  nnoremap <silent><buffer><expr> m
+        \ defx#do_action('move')
+  nnoremap <silent><buffer><expr> p
+        \ defx#do_action('paste')
+  nnoremap <silent><buffer><expr> l
+        \ defx#do_action('open')
+  nnoremap <silent><buffer><expr> E
+        \ defx#do_action('open', 'vsplit')
+  nnoremap <silent><buffer><expr> P
+        \ defx#do_action('open', 'pedit')
+  nnoremap <silent><buffer><expr> K
+        \ defx#do_action('new_directory')
+  nnoremap <silent><buffer><expr> N
+        \ defx#do_action('new_file')
+  nnoremap <silent><buffer><expr> d
+        \ defx#do_action('remove')
+  nnoremap <silent><buffer><expr> r
+        \ defx#do_action('rename')
+  nnoremap <silent><buffer><expr> x
+        \ defx#do_action('execute_system')
+  nnoremap <silent><buffer><expr> yy
+        \ defx#do_action('yank_path')
+  nnoremap <silent><buffer><expr> .
+        \ defx#do_action('toggle_ignored_files')
+  nnoremap <silent><buffer><expr> h
+        \ defx#do_action('cd', ['..'])
+  nnoremap <silent><buffer><expr> ~
+        \ defx#do_action('cd')
+  nnoremap <silent><buffer><expr> q
+        \ defx#do_action('quit')
+  nnoremap <silent><buffer><expr> <Space>
+        \ defx#do_action('toggle_select') . 'j'
+  nnoremap <silent><buffer><expr> *
+        \ defx#do_action('toggle_select_all')
+  nnoremap <silent><buffer><expr> j
+        \ line('.') == line('$') ? 'gg' : 'j'
+  nnoremap <silent><buffer><expr> k
+        \ line('.') == 1 ? 'G' : 'k'
+  nnoremap <silent><buffer><expr> <C-l>
+        \ defx#do_action('redraw')
+  nnoremap <silent><buffer><expr> <C-g>
+        \ defx#do_action('print')
+  nnoremap <silent><buffer><expr> cd
+        \ defx#do_action('change_vim_cwd')
+endfunction
+" defx Config: end -----------------
+
+" スペース3回でdefx
+nnoremap <silent> <Space><Space><Space> :<C-u>Defx<CR>

@@ -12,8 +12,8 @@
   bpr = !git-blame-pr.pl
   open-bpr = "!f() { r=$(git bpr $1 | peco); echo $r | cut -f2 -d ' ' | cut -c2- | xargs -I {} hub browse -- pull/{}; }; f"
 [core]
-  editor = vim -c \"set fenc=utf-8\"
-  excludesfile = /Users/cesario/.gitignore_global
+  editor = nvim
+  excludesfile = /Users/hoshino/.gitignore_global
 [push]
 	default = simple
 [init]
