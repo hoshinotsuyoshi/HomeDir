@@ -207,3 +207,4 @@ eval "$(pyenv init -)"
 # avoid brew-doctor warning
 # https://qiita.com/takuya0301/items/695f42f6904e979f0152
 alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
