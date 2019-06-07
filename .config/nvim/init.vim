@@ -270,7 +270,7 @@ nnoremap <silent> <C-]> :call fzf#vim#tags(expand('<cword>'))<CR>
 let g:fzf_buffers_jump = 1
 
 " nvim限定・rubocopへのパス
-let $PATH="/Users/hoshino/.rubocop:".$PATH
+" let $PATH="/Users/hoshino/.rubocop:".$PATH
 
 " Auto fix
 " https://wonderwall.hatenablog.com/entry/2017/03/01/223934
@@ -278,7 +278,10 @@ let $PATH="/Users/hoshino/.rubocop:".$PATH
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \}
-"let g:ale_enabled = 1
+" Faster 🚀
+let g:ale_ruby_rubocop_executable = 'rubocop-daemon-wrapper'
+" let g:ale_ruby_rubocop_executable = 'rubocop'
+let g:ale_enabled = 1
 let g:ale_fix_on_save = 1
 
 " <ペースト問題>

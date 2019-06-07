@@ -15,7 +15,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export EDITOR="vim"
 
 #左のほうにユーザ名とカレントディレクトリを表示するPROMPT
-PROMPT='[%F{blue}%d%f]$ '
+# PROMPT='[%F{blue}%d%f]$ '
+PROMPT='[%F{blue}%15>..>%c%<<%f]$ '
 
 # http://futurismo.biz/archives/1363
 ## Screenでのコマンド共有用
@@ -193,7 +194,7 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
 alias v='nvim'
-alias g='git'
+# alias g='git'
 # alias rubocop='rubocop-daemon-wrapper'
 
 eval "$(pyenv init -)"
