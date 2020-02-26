@@ -41,7 +41,7 @@ syntax enable
 
 " denite
 " https://blog.hatappi.me/entry/2017/08/28/191529
-call denite#custom#var('file_rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 call denite#custom#var('grep', 'command', ['ag'])
 call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
 call denite#custom#var('grep', 'recursive_opts', [])
@@ -49,13 +49,30 @@ call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 
-nnoremap <silent> <Space>f :<C-u>Denite file_rec<CR>
+nnoremap <silent> <Space>f :<C-u>Denite file/rec<CR>
 "nnoremap <silent> <Space>g :<C-u>Denite grep<CR>
 nnoremap <silent> <Space>l :<C-u>Denite line<CR>
 nnoremap <silent> <Space>u :<C-u>Denite file_mru<CR>
 
 nnoremap <silent> <Space>r :<C-u>Denite command_history<CR>
 nnoremap <silent> <Space>b :<C-u>Denite buffer<CR>
+
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
 
 " denite grep
 " https://qiita.com/pocari/items/1b76c211d5555fa87834
