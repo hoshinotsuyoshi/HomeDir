@@ -13,7 +13,7 @@
   open-bpr = "!f() { r=$(git bpr $1 | peco); echo $r | cut -f2 -d ' ' | cut -c2- | xargs -I {} hub browse -- pull/{}; }; f"
 [core]
   editor = nvim
-  excludesfile = /Users/hoshino/.gitignore_global
+  excludesfile = /Users/cesario/.gitignore_global
 [push]
 	default = simple
 [init]

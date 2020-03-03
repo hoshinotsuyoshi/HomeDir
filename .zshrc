@@ -193,6 +193,12 @@ export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
+# aws command completion
+# http://qiita.com/szk3/items/dfba6ec3cefdefb35060
+source /usr/local/bin/aws_zsh_completer.sh
+
+# http://www.pandanoir.info/entry/2016/12/30/190000
+alias nvim='VIM=/usr/local/Cellar/neovim/0.2.2/share/nvim nvim'
 alias v='nvim'
 # alias g='git'
 # alias rubocop='rubocop-daemon-wrapper'
@@ -212,3 +218,4 @@ alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/slss.zsh
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
