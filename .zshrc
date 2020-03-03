@@ -202,3 +202,13 @@ eval "$(pyenv init -)"
 # avoid brew-doctor warning
 # https://qiita.com/takuya0301/items/695f42f6904e979f0152
 alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/slss.zsh
