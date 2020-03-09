@@ -39,7 +39,7 @@ task :install_by_pip do
     awslogs
     powerline-status==2.4
   ).each do |text|
-    sh "pip install #{text}"
+    sh "pip3 install #{text}"
   end
 end
 

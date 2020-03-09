@@ -1,44 +1,44 @@
 :brew:
-  - ctags
+  # - ctags
   - direnv
   - doxygen # suppress warning by `brew doctor`
   # - elasticsearch
   - git
   - gnu-sed
   - gnu-tar
-  - gpg # gpg
+  # - gpg # gpg
   - go
-  - heroku-toolbelt
+  # - heroku-toolbelt
   - hub
-  - hugo
+  # - hugo
   - imagemagick
   - jq
   - lha
   - mysql
-  - nodenv
+  # - nodenv
   - nkf
   - peco
   - phantomjs
-  - pinentry-mac #gpg
+  # - pinentry-mac #gpg
   - postgresql
   - pwgen
   # - qt
   - reattach-to-user-namespace
   - redis
   - the_silver_searcher
-  - tig
+  # - tig
   - tmux
   - tree
-  - vim
+  # - vim
   - watch
   - wget
   - yarn
   - z
-  - zsh
+  # - zsh
 :cask:
   # - clipmenu
-  - google-chrome
-  - google-japanese-ime
+  # - google-chrome
+  # - google-japanese-ime
   # - karabiner
   # - java # for elasticsearch
   - macvim
