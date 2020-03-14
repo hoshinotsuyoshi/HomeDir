@@ -8,7 +8,6 @@
   - gnu-tar
   # - gpg # gpg
   - go
-  - heroku-toolbelt
   - hub
   # - hugo
   - imagemagick
@@ -37,7 +36,7 @@
   - zsh
 :cask:
   # - clipmenu
-  - google-chrome
+  # - google-chrome
   - google-japanese-ime
   # - karabiner
   # - java # for elasticsearch
