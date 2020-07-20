@@ -43,3 +43,6 @@ repo = 'todesking/ruby_hl_lvar.vim'
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
+
+[[plugins]]
+repo = 'ElmCast/elm-vim'

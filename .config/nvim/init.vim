@@ -21,7 +21,8 @@ if dein#load_state('~/.cache/dein')
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
   let s:toml = '~/HomeDir/.config/nvim/dein.toml'
-  call dein#load_toml(s:toml, {'lazy': 0})
+  " call dein#load_toml(s:toml, {'lazy': 0})
+  call dein#load_toml(s:toml)
 
   " Required:
   call dein#end()
