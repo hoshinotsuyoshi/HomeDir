@@ -1,0 +1,24 @@
+[user]
+  email = guitarpopnot330@gmail.com
+  name = hoshinotsuyoshi
+  #signingkey = C06827B443E51564
+[alias]
+  #st = status -s
+  cdiff = diff --word-diff=color --word-diff-regex=.
+  co = checkout
+  #cv = commit -v -s --no-signoff
+  cv = commit -v
+  merge = merge --gpg-sign
+  bpr = !git-blame-pr.pl
+  open-bpr = "!f() { r=$(git bpr $1 | peco); echo $r | cut -f2 -d ' ' | cut -c2- | xargs -I {} hub browse -- pull/{}; }; f"
+[core]
+  editor = nvim
+  excludesfile = /Users/hoshino/.gitignore_global
+[push]
+	default = simple
+[init]
+  templatedir = ~/.git_template
+#[gpg]
+#	program = /usr/local/bin/gpg
+#[commit]
+#	gpgsign = true

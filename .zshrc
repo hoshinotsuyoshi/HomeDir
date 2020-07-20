@@ -127,11 +127,11 @@ export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
 # http://qiita.com/ikm/items/0e498981c6b19ac8d19b
-# 
-. /usr/local/etc/profile.d/z.sh
-function _Z_precmd {
-  z --add "$(pwd -P)" 61 }
-  precmd_functions=($precmd_functions _Z_precmd)
+## 
+#. /usr/local/etc/profile.d/z.sh
+#function _Z_precmd {
+#  z --add "$(pwd -P)" 61 }
+#  precmd_functions=($precmd_functions _Z_precmd)
 
 # http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
 
@@ -158,8 +158,6 @@ whence direnv >/dev/null && eval "$(direnv hook zsh)"
 [[ -d ~/.rbenv  ]] && \
   export PATH=${GOPATH}/src/github.com/rbenv/rbenv/bin:${PATH} && \
     eval "$(rbenv init -)"
-
-source ~/.tmuxinator/tmuxinator.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /usr/local/google-cloud-sdk/path.zsh.inc ]; then
@@ -195,7 +193,7 @@ eval "$(nodenv init -)"
 
 # aws command completion
 # http://qiita.com/szk3/items/dfba6ec3cefdefb35060
-source /usr/local/bin/aws_zsh_completer.sh
+# source /usr/local/bin/aws_zsh_completer.sh
 
 # http://www.pandanoir.info/entry/2016/12/30/190000
 alias nvim='VIM=/usr/local/Cellar/neovim/0.2.2/share/nvim nvim'
@@ -208,4 +206,14 @@ eval "$(pyenv init -)"
 # avoid brew-doctor warning
 # https://qiita.com/takuya0301/items/695f42f6904e979f0152
 alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/slss.zsh
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"

@@ -34,11 +34,14 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
+
+" let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/Users/hoshino/.pyenv/shims/python'
 
 " denite
 " https://blog.hatappi.me/entry/2017/08/28/191529
@@ -50,7 +53,8 @@ call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 
-nnoremap <silent> <Space>f :<C-u>Denite file/rec<CR>
+" see https://github.com/Shougo/denite.nvim/issues/641
+nnoremap <silent> <Space>f :<C-u>Denite -max-dynamic-update-candidates=10000000 file/rec<CR>
 "nnoremap <silent> <Space>g :<C-u>Denite grep<CR>
 nnoremap <silent> <Space>l :<C-u>Denite line<CR>
 nnoremap <silent> <Space>u :<C-u>Denite file_mru<CR>
@@ -89,6 +93,23 @@ nnoremap <silent> [denitegrep]r :<C-u>Denite -resume -buffer-name=search-buffer-
 nnoremap <silent> [denitegrep]n :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=+1 -immediately<CR>
 " resumeした検索結果の前の行の結果へ飛ぶ
 nnoremap <silent> [denitegrep]p :<C-u>Denite -resume -buffer-name=search-buffer-denite -select=-1 -immediately<CR>
+
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
 
 "End denite -------------------
 

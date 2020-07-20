@@ -22,9 +22,9 @@ end
 
 desc 'install commands by homebrew and homebrew-cask'
 task :install do
-  setting[:brew].each do |text|
-    sh "brew install #{text}"
-  end
+  # setting[:brew].each do |text|
+  #   sh "brew install #{text}"
+  # end
 
   setting[:cask].each do |text|
     sh "brew cask install #{text}"
@@ -32,23 +32,12 @@ task :install do
   # licecap
 end
 
-desc 'tools install by pip'
-task :install_by_pip do
+desc 'tools install by pip3'
+task :install_by_pip3 do
   %w(
-    awscli
-    awslogs
     powerline-status==2.4
   ).each do |text|
-    sh "pip install #{text}"
-  end
-end
-
-desc 'tools install by gem'
-task :install_by_gem do
-  %w(
-    tmuxinator
-  ).each do |text|
-    sh "gem install #{text}"
+    sh "pip3 install #{text} --user"
   end
 end
 
@@ -80,12 +69,8 @@ task :rbenv do
   File.write("#{home}/.rbenv/default-gems", %w[
              bundler
              pry
+             neovim
              ].join("\n"))
-end
-
-desc 'setup ruby'
-task :ruby do
-  sh 'rbenv install 2.4.1'
 end
 
 desc 'setup ssh client'
@@ -122,12 +107,6 @@ task :login_shell do
   puts "==== how to change login shell ===="
   puts "「ユーザとグループ」->"
   puts "「hoshino」-> 右クリック -> 詳細オプション"
-end
-
-desc 'neobundle'
-task :neobundle do
-  puts "You should install neobundle for vim setup."
-  puts "Visit github.com/Shougo/neobundle.vim"
 end
 
 desc 'setup karabiner'

@@ -6,21 +6,20 @@
   - git
   - gnu-sed
   - gnu-tar
-  - gpg # gpg
+  # - gpg # gpg
   - go
-  - heroku-toolbelt
   - hub
-  - hugo
+  # - hugo
   - imagemagick
   - jq
-  - lha
+  # - lha
   - mysql
   - nodenv
   - nkf
   - peco
-  - phantomjs
+  # - phantomjs
   - pinentry-mac #gpg
-  - postgresql
+  # - postgresql
   - pwgen
   # - qt
   - reattach-to-user-namespace
@@ -29,7 +28,7 @@
   - tig
   - tmux
   - tree
-  - vim
+  # - vim
   - watch
   - wget
   - yarn
@@ -37,7 +36,7 @@
   - zsh
 :cask:
   # - clipmenu
-  - google-chrome
+  # - google-chrome
   - google-japanese-ime
   # - karabiner
   # - java # for elasticsearch
