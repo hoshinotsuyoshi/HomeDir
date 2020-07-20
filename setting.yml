@@ -8,29 +8,29 @@
   - gnu-tar
   # - gpg # gpg
   - go
-  - hub
+  # - hub
   # - hugo
-  - imagemagick
+  # - imagemagick
   - jq
   # - lha
   - mysql
   - nodenv
-  - nkf
+  # - nkf
   - peco
   # - phantomjs
-  - pinentry-mac #gpg
+  # - pinentry-mac #gpg
   # - postgresql
   - pwgen
   # - qt
   - reattach-to-user-namespace
   - redis
   - the_silver_searcher
-  - tig
+  # - tig
   - tmux
-  - tree
+  # - tree
   # - vim
   - watch
-  - wget
+  # - wget
   - yarn
   - z
   - zsh

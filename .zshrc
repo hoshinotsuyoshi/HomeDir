@@ -196,7 +196,7 @@ eval "$(nodenv init -)"
 # source /usr/local/bin/aws_zsh_completer.sh
 
 # http://www.pandanoir.info/entry/2016/12/30/190000
-alias nvim='VIM=/usr/local/Cellar/neovim/0.2.2/share/nvim nvim'
+alias nvim='VIM=/usr/local/Cellar/neovim/0.4.3/share/nvim nvim'
 alias v='nvim'
 # alias g='git'
 # alias rubocop='rubocop-daemon-wrapper'

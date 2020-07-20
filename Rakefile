@@ -20,18 +20,6 @@ task :brew do
   sh 'brew doctor'
 end
 
-desc 'install commands by homebrew and homebrew-cask'
-task :install do
-  # setting[:brew].each do |text|
-  #   sh "brew install #{text}"
-  # end
-
-  setting[:cask].each do |text|
-    sh "brew cask install #{text}"
-  end
-  # licecap
-end
-
 desc 'tools install by pip3'
 task :install_by_pip3 do
   %w(
@@ -67,20 +55,9 @@ task :rbenv do
   puts "==== default gem by rbenv-default-gems ===="
 
   File.write("#{home}/.rbenv/default-gems", %w[
-             bundler
              pry
              neovim
              ].join("\n"))
-end
-
-desc 'setup ssh client'
-task :ssh do
-  puts "==== setup ~/.ssh ===="
-  sh 'mkdir -p .ssh'
-  sh 'chmod 700 .ssh'
-  unless File.exist?('.ssh/id_rsa')
-    puts 'Not Found -- .ssh/id_rsa'
-  end
 end
 
 desc 'symlink to dotfiles'
@@ -100,13 +77,6 @@ task :init_vim do
   mkdir_p "#{home}/.config/nvim"
   link = "#{home}/.config/nvim/init.vim"
   ln_s "#{Dir.pwd}/.config/nvim/init.vim", link unless File.exist?(link)
-end
-
-desc 'login shell'
-task :login_shell do
-  puts "==== how to change login shell ===="
-  puts "「ユーザとグループ」->"
-  puts "「hoshino」-> 右クリック -> 詳細オプション"
 end
 
 desc 'setup karabiner'
@@ -145,23 +115,6 @@ desc 'install docker'
 task :docker do
   puts 'use docker-for-mac'
   puts 'visit https://docs.docker.com/docker-for-mac/'
-end
-
-desc 'install solarized to macvim'
-task :solarized_macvim do
-  SOLARIZED_DOWNLOAD_LOCATION = 'http://ethanschoonover.com/solarized/files/solarized.zip'
-  MACVIM_COLORS_DIR = '/Applications/MacVim.app/Contents/Resources/vim/runtime/colors/'
-  SOLARIZED_VIM_LOCATION = './solarized/vim-colors-solarized/colors/solarized.vim'
-
-  Dir.chdir '/tmp' do
-    rm_rf 'solarized'
-    rm_rf 'solarized.zip'
-    sh "curl -LO #{SOLARIZED_DOWNLOAD_LOCATION}"
-    sh 'unzip -q solarized.zip'
-    mv SOLARIZED_VIM_LOCATION, MACVIM_COLORS_DIR
-    rm_rf 'solarized'
-    rm_rf 'solarized.zip'
-  end
 end
 
 desc 'install ecs-cli'
