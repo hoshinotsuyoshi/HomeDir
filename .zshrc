@@ -213,3 +213,12 @@ alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/hoshino/go/src/github.com/adventar/adventar/frontend/node_modules/tabtab/.completions/slss.zsh
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+
+# キーリピートの速さ: 一度やれば良い
+# https://qiita.com/seteen/items/5698089808612f6b87e0
+# defaults write -g KeyRepeat -int 1
+# defaults write -g InitialKeyRepeat -int 12
+
+# flutter
+export PATH="/Users/hoshino/go/src/github.com/flutter/flutter/bin:$PATH"
