@@ -408,3 +408,5 @@ endfunction
 
 " スペース3回でdefx
 nnoremap <silent> <Space><Space><Space> :<C-u>Defx<CR>
+
+nnoremap <silent> <Space><Space>h :<C-u>cd %:h<CR> :<C-u>Defx<CR>
