@@ -114,7 +114,6 @@ endfunction
 
 "End denite -------------------
 
-
 " true color
 set termguicolors
 colorscheme iceberg
@@ -411,11 +410,12 @@ nnoremap <silent> <Space><Space><Space> :<C-u>Defx<CR>
 
 nnoremap <silent> <Space><Space>h :<C-u>cd %:h<CR> :<C-u>Defx<CR>
 
-" https://qiita.com/suketa/items/c368b3acd11403c23169
-let g:deoplete#enable_at_startup = 1
-let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['solargraph', 'stdio'],
-\}
-call deoplete#custom#var('omni', 'input_patterns', {
-    \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
-\})
+"" deoplete + solargraph. 使えるけど一旦無効にする
+"" https://qiita.com/suketa/items/c368b3acd11403c23169
+"let g:deoplete#enable_at_startup = 1
+"let g:LanguageClient_serverCommands = {
+"    \ 'ruby': ['solargraph', 'stdio'],
+"\}
+"call deoplete#custom#var('omni', 'input_patterns', {
+"    \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
+"\})

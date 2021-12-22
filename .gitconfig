@@ -1,6 +1,6 @@
 [user]
-  email = guitarpopnot330@gmail.com
-  name = hoshinotsuyoshi
+	email = tsuyoshi.hoshino@route06.co.jp
+	name = Tsuyoshi Hoshino
   #signingkey = C06827B443E51564
 [alias]
   #st = status -s
@@ -15,7 +15,7 @@
   editor = nvim
   excludesfile = /Users/hoshino/.gitignore_global
 [push]
-	default = simple
+	default = current
 [init]
   templatedir = ~/.git_template
 	defaultBranch = main

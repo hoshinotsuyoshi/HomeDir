@@ -10,9 +10,6 @@
 # WebStorm
 /.idea
 
-# ctags
-tags
-
 # ruby
 vendor/bundle
 .bundle/*
@@ -35,3 +32,9 @@ dump.test.sql
 .vault_pass
 
 .python-version
+
+.nuxt
+
+**/vendor/bundle
+**/.bundle/*
+
