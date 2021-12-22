@@ -126,12 +126,8 @@ bindkey '^r' peco-select-history
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
-# http://qiita.com/ikm/items/0e498981c6b19ac8d19b
-## 
-#. /usr/local/etc/profile.d/z.sh
-#function _Z_precmd {
-#  z --add "$(pwd -P)" 61 }
-#  precmd_functions=($precmd_functions _Z_precmd)
+# https://qiita.com/yoshikaw/items/38d3008ac7d0b19b4805
+source $GOPATH/src/github.com/rupa/z/z.sh
 
 # http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
 
