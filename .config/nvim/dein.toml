@@ -46,3 +46,9 @@ repo = 'Shougo/defx.nvim'
 
 [[plugins]]
 repo = 'ElmCast/elm-vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
