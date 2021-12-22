@@ -20,7 +20,8 @@ if dein#load_state('~/.cache/dein')
 
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
-  let s:toml = '~/HomeDir/.config/nvim/dein.toml'
+  "let s:toml = '~/HomeDir/.config/nvim/dein.toml'
+  let s:toml = '~/go/src/github.com/hoshinotsuyoshi/HomeDir/.config/nvim/dein.toml'
   " call dein#load_toml(s:toml, {'lazy': 0})
   call dein#load_toml(s:toml)
 
@@ -40,8 +41,8 @@ endif
 
 "End dein Scripts-------------------------
 
-" let g:python3_host_prog = '/usr/local/bin/python3'
-let g:python3_host_prog = '/Users/hoshino/.pyenv/shims/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+" let g:python3_host_prog = '/Users/hoshino/.pyenv/shims/python'
 
 " denite
 " https://blog.hatappi.me/entry/2017/08/28/191529
